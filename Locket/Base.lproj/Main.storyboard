@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Locket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-7h-JDx">
+                                <rect key="frame" x="97" y="154" width="207" height="318"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="207" id="7HU-NS-tOE"/>
+                                    <constraint firstAttribute="height" constant="318" id="vdF-CN-Y39"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="PhU-Mg-SAd">
+                                <rect key="frame" x="126" y="571" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="daw-2i-iG6"/>
+                                    <constraint firstAttribute="width" constant="34" id="j6P-UZ-R1D"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кулон" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVY-C3-IhX">
+                                <rect key="frame" x="177" y="567" width="98" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Живые фотографии от твоих друзей на главном экране" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcz-Pr-cpd">
+                                <rect key="frame" x="42" y="630" width="309" height="50.333333333333371"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYD-CX-dM0">
+                                <rect key="frame" x="117" y="720.33333333333337" width="166" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PnV-pf-cgK"/>
+                                    <constraint firstAttribute="width" constant="166" id="iwO-eF-Bjg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Создать аккаунт">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.76901494859487474" blue="0.075284668995444282" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmR-bC-aSc">
+                                <rect key="frame" x="157.66666666666666" y="784.33333333333337" width="79" height="36"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Войти">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="opaqueSeparatorColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hcz-Pr-cpd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="1yS-1u-Jyy"/>
+                            <constraint firstItem="hcz-Pr-cpd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7R7-Ht-H3L"/>
+                            <constraint firstItem="Ube-7h-JDx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="7Wg-N2-QRC"/>
+                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="top" secondItem="Ube-7h-JDx" secondAttribute="bottom" constant="99" id="A8T-5Z-VmZ"/>
+                            <constraint firstItem="UYD-CX-dM0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="DrL-bF-tLo"/>
+                            <constraint firstItem="hcz-Pr-cpd" firstAttribute="top" secondItem="DVY-C3-IhX" secondAttribute="bottom" constant="22" id="FTV-8z-UeG"/>
+                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="GFK-HQ-aOa"/>
+                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="Sf8-bh-NMa"/>
+                            <constraint firstItem="MmR-bC-aSc" firstAttribute="top" secondItem="UYD-CX-dM0" secondAttribute="bottom" constant="14" id="Xw6-ji-Vmv"/>
+                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="top" secondItem="Ube-7h-JDx" secondAttribute="bottom" constant="99" id="iOg-7w-8tJ"/>
+                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="mKL-f7-sr2"/>
+                            <constraint firstItem="DVY-C3-IhX" firstAttribute="leading" secondItem="PhU-Mg-SAd" secondAttribute="trailing" constant="17" id="nFx-hb-sdY"/>
+                            <constraint firstItem="Ube-7h-JDx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="pPd-K2-SHA"/>
+                            <constraint firstItem="DVY-C3-IhX" firstAttribute="top" secondItem="Ube-7h-JDx" secondAttribute="bottom" constant="95" id="sDl-Zp-laZ"/>
+                            <constraint firstItem="UYD-CX-dM0" firstAttribute="top" secondItem="hcz-Pr-cpd" secondAttribute="bottom" constant="40" id="yWF-dw-Wod"/>
+                            <constraint firstItem="MmR-bC-aSc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157.5" id="z92-TP-vDy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Image" width="414" height="636"/>
+        <image name="Image 1" width="68" height="69"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
