@@ -13,27 +13,17 @@
 		5E099B3A2CB84A880056F226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B382CB84A880056F226 /* Main.storyboard */; };
 		5E099B3C2CB84A8A0056F226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B3B2CB84A8A0056F226 /* Assets.xcassets */; };
 		5E099B3F2CB84A8A0056F226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B3D2CB84A8A0056F226 /* LaunchScreen.storyboard */; };
-		5E099B4A2CB84A8B0056F226 /* LocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E099B492CB84A8B0056F226 /* LocketTests.swift */; };
-		5E099B542CB84A8B0056F226 /* LocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E099B532CB84A8B0056F226 /* LocketUITests.swift */; };
-		5E099B562CB84A8B0056F226 /* LocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E099B552CB84A8B0056F226 /* LocketUITestsLaunchTests.swift */; };
+		D84043FF2CBC45E00054922A /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */; };
+		D84044002CBC45E00054922A /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */; };
+		D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */; };
+		D84044022CBC45E00054922A /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F92CBC45DF0054922A /* SF-Pro-Rounded-Heavy.otf */; };
+		D84044032CBC45E00054922A /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043FA2CBC45DF0054922A /* SF-Pro-Rounded-Light.otf */; };
+		D84044042CBC45E00054922A /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043FB2CBC45E00054922A /* SF-Pro-Rounded-Regular.otf */; };
+		D84044052CBC45E00054922A /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043FC2CBC45E00054922A /* SF-Pro-Rounded-Black.otf */; };
+		D84044072CBC45E00054922A /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043FE2CBC45E00054922A /* SF-Pro-Rounded-Medium.otf */; };
+		D89E3E9D2CBC47590034D046 /* SF Pro Rounded Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D89E3E9C2CBC47590034D046 /* SF Pro Rounded Semibold.otf */; };
+		D89E3E9F2CBC47B10034D046 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E3E9E2CBC47B10034D046 /* Fonts.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5E099B462CB84A8B0056F226 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E099B272CB84A880056F226 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5E099B2E2CB84A880056F226;
-			remoteInfo = Locket;
-		};
-		5E099B502CB84A8B0056F226 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E099B272CB84A880056F226 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5E099B2E2CB84A880056F226;
-			remoteInfo = Locket;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5E099B2F2CB84A880056F226 /* Locket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,29 +34,20 @@
 		5E099B3B2CB84A8A0056F226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E099B3E2CB84A8A0056F226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E099B402CB84A8A0056F226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E099B452CB84A8B0056F226 /* LocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E099B492CB84A8B0056F226 /* LocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocketTests.swift; sourceTree = "<group>"; };
-		5E099B4F2CB84A8B0056F226 /* LocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E099B532CB84A8B0056F226 /* LocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocketUITests.swift; sourceTree = "<group>"; };
-		5E099B552CB84A8B0056F226 /* LocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
+		D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		D84043F92CBC45DF0054922A /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
+		D84043FA2CBC45DF0054922A /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
+		D84043FB2CBC45E00054922A /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		D84043FC2CBC45E00054922A /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
+		D84043FE2CBC45E00054922A /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		D89E3E9C2CBC47590034D046 /* SF Pro Rounded Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Pro Rounded Semibold.otf"; sourceTree = "<group>"; };
+		D89E3E9E2CBC47B10034D046 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5E099B2C2CB84A880056F226 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E099B422CB84A8B0056F226 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E099B4C2CB84A8B0056F226 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,8 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				5E099B312CB84A880056F226 /* Locket */,
-				5E099B482CB84A8B0056F226 /* LocketTests */,
-				5E099B522CB84A8B0056F226 /* LocketUITests */,
 				5E099B302CB84A880056F226 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				5E099B2F2CB84A880056F226 /* Locket.app */,
-				5E099B452CB84A8B0056F226 /* LocketTests.xctest */,
-				5E099B4F2CB84A8B0056F226 /* LocketUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +76,7 @@
 		5E099B312CB84A880056F226 /* Locket */ = {
 			isa = PBXGroup;
 			children = (
+				D84043F52CBC456D0054922A /* Fonts */,
 				5E099B322CB84A880056F226 /* AppDelegate.swift */,
 				5E099B342CB84A880056F226 /* SceneDelegate.swift */,
 				5E099B362CB84A880056F226 /* ViewController.swift */,
@@ -110,21 +88,21 @@
 			path = Locket;
 			sourceTree = "<group>";
 		};
-		5E099B482CB84A8B0056F226 /* LocketTests */ = {
+		D84043F52CBC456D0054922A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5E099B492CB84A8B0056F226 /* LocketTests.swift */,
+				D89E3E9C2CBC47590034D046 /* SF Pro Rounded Semibold.otf */,
+				D84043FC2CBC45E00054922A /* SF-Pro-Rounded-Black.otf */,
+				D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */,
+				D84043F92CBC45DF0054922A /* SF-Pro-Rounded-Heavy.otf */,
+				D84043FA2CBC45DF0054922A /* SF-Pro-Rounded-Light.otf */,
+				D84043FE2CBC45E00054922A /* SF-Pro-Rounded-Medium.otf */,
+				D84043FB2CBC45E00054922A /* SF-Pro-Rounded-Regular.otf */,
+				D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */,
+				D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */,
+				D89E3E9E2CBC47B10034D046 /* Fonts.swift */,
 			);
-			path = LocketTests;
-			sourceTree = "<group>";
-		};
-		5E099B522CB84A8B0056F226 /* LocketUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5E099B532CB84A8B0056F226 /* LocketUITests.swift */,
-				5E099B552CB84A8B0056F226 /* LocketUITestsLaunchTests.swift */,
-			);
-			path = LocketUITests;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,42 +125,6 @@
 			productReference = 5E099B2F2CB84A880056F226 /* Locket.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5E099B442CB84A8B0056F226 /* LocketTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5E099B5C2CB84A8B0056F226 /* Build configuration list for PBXNativeTarget "LocketTests" */;
-			buildPhases = (
-				5E099B412CB84A8B0056F226 /* Sources */,
-				5E099B422CB84A8B0056F226 /* Frameworks */,
-				5E099B432CB84A8B0056F226 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5E099B472CB84A8B0056F226 /* PBXTargetDependency */,
-			);
-			name = LocketTests;
-			productName = LocketTests;
-			productReference = 5E099B452CB84A8B0056F226 /* LocketTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		5E099B4E2CB84A8B0056F226 /* LocketUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5E099B5F2CB84A8B0056F226 /* Build configuration list for PBXNativeTarget "LocketUITests" */;
-			buildPhases = (
-				5E099B4B2CB84A8B0056F226 /* Sources */,
-				5E099B4C2CB84A8B0056F226 /* Frameworks */,
-				5E099B4D2CB84A8B0056F226 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5E099B512CB84A8B0056F226 /* PBXTargetDependency */,
-			);
-			name = LocketUITests;
-			productName = LocketUITests;
-			productReference = 5E099B4F2CB84A8B0056F226 /* LocketUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,14 +137,6 @@
 				TargetAttributes = {
 					5E099B2E2CB84A880056F226 = {
 						CreatedOnToolsVersion = 14.2;
-					};
-					5E099B442CB84A8B0056F226 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 5E099B2E2CB84A880056F226;
-					};
-					5E099B4E2CB84A8B0056F226 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 5E099B2E2CB84A880056F226;
 					};
 				};
 			};
@@ -220,8 +154,6 @@
 			projectRoot = "";
 			targets = (
 				5E099B2E2CB84A880056F226 /* Locket */,
-				5E099B442CB84A8B0056F226 /* LocketTests */,
-				5E099B4E2CB84A8B0056F226 /* LocketUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,23 +163,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89E3E9D2CBC47590034D046 /* SF Pro Rounded Semibold.otf in Resources */,
 				5E099B3F2CB84A8A0056F226 /* LaunchScreen.storyboard in Resources */,
+				D84044032CBC45E00054922A /* SF-Pro-Rounded-Light.otf in Resources */,
+				D84044072CBC45E00054922A /* SF-Pro-Rounded-Medium.otf in Resources */,
+				D84044052CBC45E00054922A /* SF-Pro-Rounded-Black.otf in Resources */,
 				5E099B3C2CB84A8A0056F226 /* Assets.xcassets in Resources */,
 				5E099B3A2CB84A880056F226 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E099B432CB84A8B0056F226 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E099B4D2CB84A8B0056F226 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */,
+				D84044042CBC45E00054922A /* SF-Pro-Rounded-Regular.otf in Resources */,
+				D84044002CBC45E00054922A /* SF-Pro-Rounded-Ultralight.otf in Resources */,
+				D84044022CBC45E00054922A /* SF-Pro-Rounded-Heavy.otf in Resources */,
+				D84043FF2CBC45E00054922A /* SF-Pro-Rounded-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,43 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89E3E9F2CBC47B10034D046 /* Fonts.swift in Sources */,
 				5E099B372CB84A880056F226 /* ViewController.swift in Sources */,
 				5E099B332CB84A880056F226 /* AppDelegate.swift in Sources */,
 				5E099B352CB84A880056F226 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E099B412CB84A8B0056F226 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E099B4A2CB84A8B0056F226 /* LocketTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E099B4B2CB84A8B0056F226 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E099B562CB84A8B0056F226 /* LocketUITestsLaunchTests.swift in Sources */,
-				5E099B542CB84A8B0056F226 /* LocketUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5E099B472CB84A8B0056F226 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5E099B2E2CB84A880056F226 /* Locket */;
-			targetProxy = 5E099B462CB84A8B0056F226 /* PBXContainerItemProxy */;
-		};
-		5E099B512CB84A8B0056F226 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5E099B2E2CB84A880056F226 /* Locket */;
-			targetProxy = 5E099B502CB84A8B0056F226 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5E099B382CB84A880056F226 /* Main.storyboard */ = {
@@ -484,78 +382,6 @@
 			};
 			name = Release;
 		};
-		5E099B5D2CB84A8B0056F226 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rim.LocketTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Locket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Locket";
-			};
-			name = Debug;
-		};
-		5E099B5E2CB84A8B0056F226 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rim.LocketTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Locket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Locket";
-			};
-			name = Release;
-		};
-		5E099B602CB84A8B0056F226 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rim.LocketUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Locket;
-			};
-			name = Debug;
-		};
-		5E099B612CB84A8B0056F226 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rim.LocketUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Locket;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,24 +399,6 @@
 			buildConfigurations = (
 				5E099B5A2CB84A8B0056F226 /* Debug */,
 				5E099B5B2CB84A8B0056F226 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E099B5C2CB84A8B0056F226 /* Build configuration list for PBXNativeTarget "LocketTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5E099B5D2CB84A8B0056F226 /* Debug */,
-				5E099B5E2CB84A8B0056F226 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E099B5F2CB84A8B0056F226 /* Build configuration list for PBXNativeTarget "LocketUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5E099B602CB84A8B0056F226 /* Debug */,
-				5E099B612CB84A8B0056F226 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
