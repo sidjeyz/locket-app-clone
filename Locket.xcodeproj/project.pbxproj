@@ -13,6 +13,9 @@
 		5E099B3A2CB84A880056F226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B382CB84A880056F226 /* Main.storyboard */; };
 		5E099B3C2CB84A8A0056F226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B3B2CB84A8A0056F226 /* Assets.xcassets */; };
 		5E099B3F2CB84A8A0056F226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B3D2CB84A8A0056F226 /* LaunchScreen.storyboard */; };
+		5ECE27A32CD8EA130079795C /* RegistrationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE27A12CD8EA120079795C /* RegistrationViewController.storyboard */; };
+		5ECE27A42CD8EA130079795C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE27A22CD8EA120079795C /* RegistrationViewController.swift */; };
+		5ECE27A72CD8EAC10079795C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE27A62CD8EAC10079795C /* WelcomeViewController.swift */; };
 		D84043FF2CBC45E00054922A /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */; };
 		D84044002CBC45E00054922A /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */; };
 		D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */; };
@@ -34,6 +37,9 @@
 		5E099B3B2CB84A8A0056F226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E099B3E2CB84A8A0056F226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E099B402CB84A8A0056F226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ECE27A12CD8EA120079795C /* RegistrationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationViewController.storyboard; sourceTree = "<group>"; };
+		5ECE27A22CD8EA120079795C /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		5ECE27A62CD8EAC10079795C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -76,6 +82,8 @@
 		5E099B312CB84A880056F226 /* Locket */ = {
 			isa = PBXGroup;
 			children = (
+				5ECE27A52CD8EA900079795C /* Welcome */,
+				5ECE27A02CD8E99A0079795C /* Registration */,
 				D84043F52CBC456D0054922A /* Fonts */,
 				5E099B322CB84A880056F226 /* AppDelegate.swift */,
 				5E099B342CB84A880056F226 /* SceneDelegate.swift */,
@@ -86,6 +94,23 @@
 				5E099B402CB84A8A0056F226 /* Info.plist */,
 			);
 			path = Locket;
+			sourceTree = "<group>";
+		};
+		5ECE27A02CD8E99A0079795C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				5ECE27A12CD8EA120079795C /* RegistrationViewController.storyboard */,
+				5ECE27A22CD8EA120079795C /* RegistrationViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		5ECE27A52CD8EA900079795C /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				5ECE27A62CD8EAC10079795C /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		D84043F52CBC456D0054922A /* Fonts */ = {
@@ -168,6 +193,7 @@
 				D84044032CBC45E00054922A /* SF-Pro-Rounded-Light.otf in Resources */,
 				D84044072CBC45E00054922A /* SF-Pro-Rounded-Medium.otf in Resources */,
 				D84044052CBC45E00054922A /* SF-Pro-Rounded-Black.otf in Resources */,
+				5ECE27A32CD8EA130079795C /* RegistrationViewController.storyboard in Resources */,
 				5E099B3C2CB84A8A0056F226 /* Assets.xcassets in Resources */,
 				5E099B3A2CB84A880056F226 /* Main.storyboard in Resources */,
 				D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */,
@@ -188,7 +214,9 @@
 				D89E3E9F2CBC47B10034D046 /* Fonts.swift in Sources */,
 				5E099B372CB84A880056F226 /* ViewController.swift in Sources */,
 				5E099B332CB84A880056F226 /* AppDelegate.swift in Sources */,
+				5ECE27A72CD8EAC10079795C /* WelcomeViewController.swift in Sources */,
 				5E099B352CB84A880056F226 /* SceneDelegate.swift in Sources */,
+				5ECE27A42CD8EA130079795C /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

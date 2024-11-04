@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUa-q6-n4A">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -7,93 +7,140 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF Pro Rounded Semibold.otf">
+            <string>SFProRounded-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Welcome View Controller-->
+        <scene sceneID="jhq-ib-BGw">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Locket" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="WelcomeViewController" id="39d-GN-jJu" customClass="WelcomeViewController" customModule="Locket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FTb-K2-k69">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-7h-JDx">
-                                <rect key="frame" x="97" y="154" width="207" height="318"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Живые фотографии от твоих друзей на главном экране" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kTB-5x-DmZ">
+                                <rect key="frame" x="42" y="628.66666666666663" width="309" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="207" id="7HU-NS-tOE"/>
-                                    <constraint firstAttribute="height" constant="318" id="vdF-CN-Y39"/>
+                                    <constraint firstAttribute="width" secondItem="kTB-5x-DmZ" secondAttribute="height" multiplier="309:50" id="2I2-P9-054"/>
                                 </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="PhU-Mg-SAd">
-                                <rect key="frame" x="126" y="571" width="34" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="daw-2i-iG6"/>
-                                    <constraint firstAttribute="width" constant="34" id="j6P-UZ-R1D"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кулон" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVY-C3-IhX">
-                                <rect key="frame" x="177" y="567" width="98" height="41"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Живые фотографии от твоих друзей на главном экране" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcz-Pr-cpd">
-                                <rect key="frame" x="42" y="630" width="309" height="50.333333333333371"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="21"/>
                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYD-CX-dM0">
-                                <rect key="frame" x="117" y="720.33333333333337" width="166" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-aq-jcP">
+                                <rect key="frame" x="98.333333333333329" y="718.66666666666663" width="196.33333333333337" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="PnV-pf-cgK"/>
-                                    <constraint firstAttribute="width" constant="166" id="iwO-eF-Bjg"/>
+                                    <constraint firstAttribute="width" secondItem="cMh-aq-jcP" secondAttribute="height" multiplier="98:25" id="q8j-7E-daQ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Создать аккаунт">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Создать аккаунт" subtitle="">
+                                    <fontDescription key="titleFontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="16"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="1" green="0.76901494859487474" blue="0.075284668995444282" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" red="0.99845844510000004" green="0.76697689290000004" blue="0.07370329648" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registrationButtonTapped:" destination="39d-GN-jJu" eventType="touchUpInside" id="Dc8-kq-LiS"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmR-bC-aSc">
-                                <rect key="frame" x="157.66666666666666" y="784.33333333333337" width="79" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdY-dT-x6e">
+                                <rect key="frame" x="157" y="782.66666666666663" width="79" height="35.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BdY-dT-x6e" secondAttribute="height" multiplier="78:35" id="02R-hO-LJk"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Войти">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <fontDescription key="titleFontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="18"/>
                                     <color key="baseForegroundColor" systemColor="opaqueSeparatorColor"/>
                                 </buttonConfiguration>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3I-eT-39z">
+                                <rect key="frame" x="122" y="572.66666666666663" width="149" height="34"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dsq-7v-LMV">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="6RZ-sA-I4Q"/>
+                                            <constraint firstAttribute="width" constant="34" id="qyC-j3-56L"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кулон" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MXF-Gq-PyF">
+                                        <rect key="frame" x="51" y="0.0" width="98" height="34"/>
+                                        <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Dsq-7v-LMV" secondAttribute="bottom" id="HfY-Gd-lOd"/>
+                                    <constraint firstItem="Dsq-7v-LMV" firstAttribute="top" secondItem="a3I-eT-39z" secondAttribute="top" id="LUF-Kh-mMZ"/>
+                                    <constraint firstItem="MXF-Gq-PyF" firstAttribute="top" secondItem="a3I-eT-39z" secondAttribute="top" id="OEy-dD-IkS"/>
+                                    <constraint firstItem="Dsq-7v-LMV" firstAttribute="leading" secondItem="a3I-eT-39z" secondAttribute="leading" id="Oam-ww-8vD"/>
+                                    <constraint firstAttribute="width" secondItem="a3I-eT-39z" secondAttribute="height" multiplier="149:34" id="RIa-LQ-2we"/>
+                                    <constraint firstAttribute="trailing" secondItem="MXF-Gq-PyF" secondAttribute="trailing" id="ZoT-6w-XYc"/>
+                                    <constraint firstItem="MXF-Gq-PyF" firstAttribute="leading" secondItem="Dsq-7v-LMV" secondAttribute="trailing" constant="17" id="ap9-ii-fw7"/>
+                                    <constraint firstAttribute="bottom" secondItem="MXF-Gq-PyF" secondAttribute="bottom" id="ezd-H4-uSE"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home screen" translatesAutoresizingMaskIntoConstraints="NO" id="3y9-O8-LhA">
+                                <rect key="frame" x="98.333333333333329" y="179.33333333333334" width="196.33333333333337" height="297.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3y9-O8-LhA" secondAttribute="height" multiplier="66:100" id="UTg-qh-9mK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="Too-dG-1VU"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hcz-Pr-cpd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="1yS-1u-Jyy"/>
-                            <constraint firstItem="hcz-Pr-cpd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7R7-Ht-H3L"/>
-                            <constraint firstItem="Ube-7h-JDx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="7Wg-N2-QRC"/>
-                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="top" secondItem="Ube-7h-JDx" secondAttribute="bottom" constant="99" id="A8T-5Z-VmZ"/>
-                            <constraint firstItem="UYD-CX-dM0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="DrL-bF-tLo"/>
-                            <constraint firstItem="hcz-Pr-cpd" firstAttribute="top" secondItem="DVY-C3-IhX" secondAttribute="bottom" constant="22" id="FTV-8z-UeG"/>
-                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="GFK-HQ-aOa"/>
-                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="Sf8-bh-NMa"/>
-                            <constraint firstItem="MmR-bC-aSc" firstAttribute="top" secondItem="UYD-CX-dM0" secondAttribute="bottom" constant="14" id="Xw6-ji-Vmv"/>
-                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="top" secondItem="Ube-7h-JDx" secondAttribute="bottom" constant="99" id="iOg-7w-8tJ"/>
-                            <constraint firstItem="PhU-Mg-SAd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="mKL-f7-sr2"/>
-                            <constraint firstItem="DVY-C3-IhX" firstAttribute="leading" secondItem="PhU-Mg-SAd" secondAttribute="trailing" constant="17" id="nFx-hb-sdY"/>
-                            <constraint firstItem="Ube-7h-JDx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="pPd-K2-SHA"/>
-                            <constraint firstItem="DVY-C3-IhX" firstAttribute="top" secondItem="Ube-7h-JDx" secondAttribute="bottom" constant="95" id="sDl-Zp-laZ"/>
-                            <constraint firstItem="UYD-CX-dM0" firstAttribute="top" secondItem="hcz-Pr-cpd" secondAttribute="bottom" constant="40" id="yWF-dw-Wod"/>
-                            <constraint firstItem="MmR-bC-aSc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157.5" id="z92-TP-vDy"/>
+                            <constraint firstItem="a3I-eT-39z" firstAttribute="top" secondItem="3y9-O8-LhA" secondAttribute="bottom" multiplier="1.2" id="4xg-p8-ksx"/>
+                            <constraint firstItem="Too-dG-1VU" firstAttribute="bottom" secondItem="BdY-dT-x6e" secondAttribute="bottom" id="7RT-PU-vi9"/>
+                            <constraint firstItem="Too-dG-1VU" firstAttribute="trailing" secondItem="kTB-5x-DmZ" secondAttribute="trailing" constant="42" id="97N-Dd-oRi"/>
+                            <constraint firstItem="cMh-aq-jcP" firstAttribute="top" secondItem="kTB-5x-DmZ" secondAttribute="bottom" constant="40" id="CQf-en-bmG"/>
+                            <constraint firstItem="3y9-O8-LhA" firstAttribute="width" secondItem="FTb-K2-k69" secondAttribute="width" multiplier="0.5" id="Jr9-gh-Cfw"/>
+                            <constraint firstItem="kTB-5x-DmZ" firstAttribute="leading" secondItem="Too-dG-1VU" secondAttribute="leading" constant="42" id="Kl6-uK-cRj"/>
+                            <constraint firstItem="kTB-5x-DmZ" firstAttribute="centerX" secondItem="Too-dG-1VU" secondAttribute="centerX" id="L9M-1N-OzN"/>
+                            <constraint firstItem="3y9-O8-LhA" firstAttribute="centerX" secondItem="FTb-K2-k69" secondAttribute="centerX" id="SyC-96-5qh"/>
+                            <constraint firstItem="cMh-aq-jcP" firstAttribute="centerX" secondItem="FTb-K2-k69" secondAttribute="centerX" id="UW8-db-HFy"/>
+                            <constraint firstItem="a3I-eT-39z" firstAttribute="centerX" secondItem="FTb-K2-k69" secondAttribute="centerX" id="dTt-pf-q0t"/>
+                            <constraint firstItem="BdY-dT-x6e" firstAttribute="top" secondItem="cMh-aq-jcP" secondAttribute="bottom" constant="14" id="egy-bA-Fe0"/>
+                            <constraint firstItem="kTB-5x-DmZ" firstAttribute="top" secondItem="a3I-eT-39z" secondAttribute="bottom" constant="22" id="ibF-Xj-E2A"/>
+                            <constraint firstItem="cMh-aq-jcP" firstAttribute="width" secondItem="FTb-K2-k69" secondAttribute="width" multiplier="0.5" id="lvl-NQ-VfR"/>
+                            <constraint firstItem="BdY-dT-x6e" firstAttribute="centerX" secondItem="FTb-K2-k69" secondAttribute="centerX" id="tTq-pn-f3C"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Mrx-hN-AyW"/>
+                    <connections>
+                        <outlet property="loginButton" destination="BdY-dT-x6e" id="BC5-ze-l2R"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VCh-xe-ZcR" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947.32824427480909" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dko-dw-wac">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EUa-q6-n4A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nfo-zY-Lch">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="39d-GN-jJu" kind="relationship" relationship="rootViewController" id="rgG-yn-Dve"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZI-lv-zgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="414" height="636"/>
-        <image name="Image 1" width="68" height="69"/>
+        <image name="Home screen" width="414" height="636"/>
+        <image name="Logo" width="68" height="69"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
