@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 class RegistrationViewController: UIViewController{
     
+    @IBOutlet weak var emailTextField: UITextField!
+       
+    @IBOutlet weak var emailLabel: UILabel!
     
     @IBOutlet weak var termsTextView: UITextView!
     
@@ -28,10 +31,14 @@ class RegistrationViewController: UIViewController{
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
         
+        continueButton.layer.cornerRadius = 10
+        continueButton.clipsToBounds = true
         continueButton.isEnabled = false
+        continueButton.backgroundColor = UIColor.secondaryLabel
+        continueButton.setTitleColor(.white, for: .normal)
         emailTextField.addTarget(self, action: #selector(emailTextFieldEditingChanged), for: .editingChanged)
         
-        
+        email()
     }
     
     private func setup() {
@@ -46,7 +53,7 @@ class RegistrationViewController: UIViewController{
             .paragraphStyle: style
         ]
         
-        var termsText = NSMutableAttributedString(string: "Нажимая продолжить, вы соглашаетесь с ", attributes: attributes)
+        let termsText = NSMutableAttributedString(string: "Нажимая продолжить, вы соглашаетесь с ", attributes: attributes)
         
         let linkAttributes: [NSAttributedString.Key: Any] = [
             .link: URL(string: "https://apple.com")!
@@ -70,7 +77,8 @@ class RegistrationViewController: UIViewController{
     }
     
     @objc func emailTextFieldEditingChanged(_ sender: UITextField) {
-        
+        continueButton.layer.cornerRadius = 10
+        continueButton.clipsToBounds = true
         if let email = sender.text, isValidEmail(email) {
             
             continueButton.backgroundColor = UIColor.orange
@@ -79,7 +87,8 @@ class RegistrationViewController: UIViewController{
             
         } else {
             
-            continueButton.backgroundColor = UIColor.gray
+            continueButton.backgroundColor = UIColor.secondaryLabel
+            continueButton.setTitleColor(.white, for: .normal)
             continueButton.isEnabled = false
             
         }
@@ -92,11 +101,6 @@ class RegistrationViewController: UIViewController{
         
     }
     
-    @IBOutlet weak var emailTextField: UITextField!
-    
-    @IBOutlet weak var emailLabel: UILabel!
-    
-   
     
     @IBAction func backButton(_ sender: Any) {
         
@@ -111,13 +115,13 @@ class RegistrationViewController: UIViewController{
         }
         
     }
+    
     @IBAction func continueButton(_ sender: Any) {
         
         
-        
     }
+    
     func isValidEmail(_ email: String) -> Bool {
-        // Простой регулярное выражение для проверки email
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
@@ -157,5 +161,13 @@ class RegistrationViewController: UIViewController{
             moveTermsTextView(isUpwards: false, keyboardHeight: keyboardSize.height, duration: 0)
         }
     }
+    func email(){
+        emailTextField.addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingDidBegin)
+        view.addSubview(emailTextField)
+    }
+    @objc func textFieldDidBeginEditing() {
+            emailTextField.text = ""
+        }
+
     
 }
