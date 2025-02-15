@@ -11,6 +11,9 @@
         <array key="SF Pro Rounded Semibold.otf">
             <string>SFProRounded-Semibold</string>
         </array>
+        <array key="SF-Pro-Rounded-Bold.otf">
+            <string>SFProRounded-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Registration View Controller-->
@@ -23,7 +26,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ваш e-mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="twL-md-jay">
                                 <rect key="frame" x="67.666666666666686" y="151" width="240" height="33.666666666666657"/>
-                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,7 +73,7 @@
                                     <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="continueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6T5-T3-4So"/>
+                                    <action selector="continueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pY4-mn-AMe"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="dfsdfdf" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M2m-2x-4SS">
@@ -106,7 +109,7 @@
                         <outlet property="continueButton" destination="5zj-Ug-1Fn" id="0Hv-SZ-oLE"/>
                         <outlet property="emailLabel" destination="twL-md-jay" id="8Ew-kg-fu1"/>
                         <outlet property="emailTextField" destination="JQb-vE-Qcd" id="J4h-vC-zwg"/>
-                        <outlet property="termsTextView" destination="M2m-2x-4SS" id="nwN-UV-nxK"/>
+                        <outlet property="termsTextView" destination="M2m-2x-4SS" id="1NH-xN-1IZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

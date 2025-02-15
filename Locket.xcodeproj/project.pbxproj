@@ -13,9 +13,15 @@
 		5E099B3A2CB84A880056F226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B382CB84A880056F226 /* Main.storyboard */; };
 		5E099B3C2CB84A8A0056F226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B3B2CB84A8A0056F226 /* Assets.xcassets */; };
 		5E099B3F2CB84A8A0056F226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E099B3D2CB84A8A0056F226 /* LaunchScreen.storyboard */; };
+		5E9AA01B2D61155500246E60 /* RegLoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9AA01A2D61155500246E60 /* RegLoadingViewController.storyboard */; };
+		5E9AA01D2D61156A00246E60 /* RegLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AA01C2D61156A00246E60 /* RegLoadingViewController.swift */; };
 		5ECE27A32CD8EA130079795C /* RegistrationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE27A12CD8EA120079795C /* RegistrationViewController.storyboard */; };
 		5ECE27A42CD8EA130079795C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE27A22CD8EA120079795C /* RegistrationViewController.swift */; };
 		5ECE27A72CD8EAC10079795C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE27A62CD8EAC10079795C /* WelcomeViewController.swift */; };
+		5ED23F152D3EDEF600B47A7A /* RegPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED23F142D3EDEF500B47A7A /* RegPasswordViewController.swift */; };
+		5ED23F172D3EDF6000B47A7A /* RegPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED23F162D3EDF6000B47A7A /* RegPasswordViewController.storyboard */; };
+		5ED23F192D3EDF9500B47A7A /* RegistrationNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED23F182D3EDF9500B47A7A /* RegistrationNameViewController.swift */; };
+		5ED23F1B2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED23F1A2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard */; };
 		D84043FF2CBC45E00054922A /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */; };
 		D84044002CBC45E00054922A /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */; };
 		D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */; };
@@ -37,9 +43,15 @@
 		5E099B3B2CB84A8A0056F226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E099B3E2CB84A8A0056F226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E099B402CB84A8A0056F226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E9AA01A2D61155500246E60 /* RegLoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegLoadingViewController.storyboard; sourceTree = "<group>"; };
+		5E9AA01C2D61156A00246E60 /* RegLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegLoadingViewController.swift; sourceTree = "<group>"; };
 		5ECE27A12CD8EA120079795C /* RegistrationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationViewController.storyboard; sourceTree = "<group>"; };
 		5ECE27A22CD8EA120079795C /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		5ECE27A62CD8EAC10079795C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5ED23F142D3EDEF500B47A7A /* RegPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegPasswordViewController.swift; sourceTree = "<group>"; };
+		5ED23F162D3EDF6000B47A7A /* RegPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegPasswordViewController.storyboard; sourceTree = "<group>"; };
+		5ED23F182D3EDF9500B47A7A /* RegistrationNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNameViewController.swift; sourceTree = "<group>"; };
+		5ED23F1A2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationNameViewController.storyboard; sourceTree = "<group>"; };
 		D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -82,8 +94,8 @@
 		5E099B312CB84A880056F226 /* Locket */ = {
 			isa = PBXGroup;
 			children = (
-				5ECE27A52CD8EA900079795C /* Welcome */,
 				5ECE27A02CD8E99A0079795C /* Registration */,
+				5ECE27A52CD8EA900079795C /* Welcome */,
 				D84043F52CBC456D0054922A /* Fonts */,
 				5E099B322CB84A880056F226 /* AppDelegate.swift */,
 				5E099B342CB84A880056F226 /* SceneDelegate.swift */,
@@ -96,11 +108,23 @@
 			path = Locket;
 			sourceTree = "<group>";
 		};
+		5E9AA0192D61151900246E60 /* RegistrationLoading */ = {
+			isa = PBXGroup;
+			children = (
+				5E9AA01C2D61156A00246E60 /* RegLoadingViewController.swift */,
+				5E9AA01A2D61155500246E60 /* RegLoadingViewController.storyboard */,
+			);
+			path = RegistrationLoading;
+			sourceTree = "<group>";
+		};
 		5ECE27A02CD8E99A0079795C /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				5ECE27A12CD8EA120079795C /* RegistrationViewController.storyboard */,
+				5E9AA0192D61151900246E60 /* RegistrationLoading */,
+				5ED23F122D3EDE6B00B47A7A /* RegistrationName  */,
+				5ED23F132D3EDE9200B47A7A /* RegistrationPassword */,
 				5ECE27A22CD8EA120079795C /* RegistrationViewController.swift */,
+				5ECE27A12CD8EA120079795C /* RegistrationViewController.storyboard */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -111,6 +135,24 @@
 				5ECE27A62CD8EAC10079795C /* WelcomeViewController.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		5ED23F122D3EDE6B00B47A7A /* RegistrationName  */ = {
+			isa = PBXGroup;
+			children = (
+				5ED23F182D3EDF9500B47A7A /* RegistrationNameViewController.swift */,
+				5ED23F1A2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard */,
+			);
+			path = "RegistrationName ";
+			sourceTree = "<group>";
+		};
+		5ED23F132D3EDE9200B47A7A /* RegistrationPassword */ = {
+			isa = PBXGroup;
+			children = (
+				5ED23F142D3EDEF500B47A7A /* RegPasswordViewController.swift */,
+				5ED23F162D3EDF6000B47A7A /* RegPasswordViewController.storyboard */,
+			);
+			path = RegistrationPassword;
 			sourceTree = "<group>";
 		};
 		D84043F52CBC456D0054922A /* Fonts */ = {
@@ -189,9 +231,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89E3E9D2CBC47590034D046 /* SF Pro Rounded Semibold.otf in Resources */,
+				5ED23F1B2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard in Resources */,
 				5E099B3F2CB84A8A0056F226 /* LaunchScreen.storyboard in Resources */,
 				D84044032CBC45E00054922A /* SF-Pro-Rounded-Light.otf in Resources */,
 				D84044072CBC45E00054922A /* SF-Pro-Rounded-Medium.otf in Resources */,
+				5ED23F172D3EDF6000B47A7A /* RegPasswordViewController.storyboard in Resources */,
 				D84044052CBC45E00054922A /* SF-Pro-Rounded-Black.otf in Resources */,
 				5ECE27A32CD8EA130079795C /* RegistrationViewController.storyboard in Resources */,
 				5E099B3C2CB84A8A0056F226 /* Assets.xcassets in Resources */,
@@ -199,6 +243,7 @@
 				D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */,
 				D84044042CBC45E00054922A /* SF-Pro-Rounded-Regular.otf in Resources */,
 				D84044002CBC45E00054922A /* SF-Pro-Rounded-Ultralight.otf in Resources */,
+				5E9AA01B2D61155500246E60 /* RegLoadingViewController.storyboard in Resources */,
 				D84044022CBC45E00054922A /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				D84043FF2CBC45E00054922A /* SF-Pro-Rounded-Thin.otf in Resources */,
 			);
@@ -213,8 +258,11 @@
 			files = (
 				D89E3E9F2CBC47B10034D046 /* Fonts.swift in Sources */,
 				5E099B372CB84A880056F226 /* ViewController.swift in Sources */,
+				5E9AA01D2D61156A00246E60 /* RegLoadingViewController.swift in Sources */,
 				5E099B332CB84A880056F226 /* AppDelegate.swift in Sources */,
 				5ECE27A72CD8EAC10079795C /* WelcomeViewController.swift in Sources */,
+				5ED23F192D3EDF9500B47A7A /* RegistrationNameViewController.swift in Sources */,
+				5ED23F152D3EDEF600B47A7A /* RegPasswordViewController.swift in Sources */,
 				5E099B352CB84A880056F226 /* SceneDelegate.swift in Sources */,
 				5ECE27A42CD8EA130079795C /* RegistrationViewController.swift in Sources */,
 			);

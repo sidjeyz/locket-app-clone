@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class RegistrationViewController: UIViewController{
+class RegistrationViewController: UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var emailTextField: UITextField!
        
@@ -63,17 +63,11 @@ class RegistrationViewController: UIViewController{
         termsText.append(linkText)
         
         self.termsTextView.attributedText = termsText
-        
+        self.termsTextView.isEditable = false // Убедитесь, что текстовое поле не редактируемое
+        self.termsTextView.isSelectable = true // Позволяем выбор текста
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-       //self.emailTextField.becomeFirstResponder()
-        
     }
     
     @objc func emailTextFieldEditingChanged(_ sender: UITextField) {
@@ -108,16 +102,20 @@ class RegistrationViewController: UIViewController{
         
     }
     
-    @IBAction func conditionsButton(_ sender: Any) {
-        
-        if let url = URL(string: "https://www.apple.com") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
-        
-    }
-    
     @IBAction func continueButton(_ sender: Any) {
         
+            guard termsTextView != nil else {
+                print("termsTextView is nil")
+                return
+            }
+
+            let storyboard = UIStoryboard(name: "RegistrationNameViewController", bundle: nil)
+            if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegistrationNameViewController") as? RegistrationNameViewController {
+                navigationController?.pushViewController(regNameViewController, animated: true)
+            } else {
+                print("Не удалось найти RegistrationNameViewController в Storyboard")
+            }
+
         
     }
     
@@ -153,7 +151,6 @@ class RegistrationViewController: UIViewController{
             moveTermsTextView(isUpwards: true, keyboardHeight: keyboardSize.height, duration: duration)
             
         }
-
     }
 
     @objc func keyboardWillHide(notification: Notification) {
@@ -161,10 +158,12 @@ class RegistrationViewController: UIViewController{
             moveTermsTextView(isUpwards: false, keyboardHeight: keyboardSize.height, duration: 0)
         }
     }
+    
     func email(){
         emailTextField.addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingDidBegin)
         view.addSubview(emailTextField)
     }
+    
     @objc func textFieldDidBeginEditing() {
             emailTextField.text = ""
         }
