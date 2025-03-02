@@ -56,19 +56,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zj-Ug-1Fn">
                                 <rect key="frame" x="16" y="726" width="343" height="52"/>
+                                <color key="backgroundColor" red="1" green="0.53913906680000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="THH-UK-7jX"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="continue">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Продолжить">
-                                            <attributes>
-                                                <font key="NSFont" size="17" name="SFProRounded-Semibold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <buttonConfiguration key="configuration" style="filled" image="continue" title="Продолжить">
+                                    <fontDescription key="titleFontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
                                     <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
                                 </buttonConfiguration>
@@ -125,6 +119,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

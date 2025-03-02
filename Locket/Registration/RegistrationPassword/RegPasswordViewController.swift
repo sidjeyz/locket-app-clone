@@ -22,6 +22,10 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func continueButton(_ sender: Any) {
         
+    weak var delegate: RegistrationDelegate?
+    var authorization: Authorization!
+
+        
         let storyboard = UIStoryboard(name: "RegLoadingViewController", bundle: nil)
         if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegLoadingViewController") as? RegLoadingViewController {
             navigationController?.pushViewController(regNameViewController, animated: true)

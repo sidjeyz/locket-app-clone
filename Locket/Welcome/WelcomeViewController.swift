@@ -13,15 +13,14 @@ import UIKit
 class WelcomeViewController: UIViewController{
     
     
-    let client: APIClient = .init()
     
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Task {
-            try await client.test()
-        }
+        //Task {
+          //  try await client.test()
+        //}
         
     }
     @IBAction func registrationButtonTapped(_ sender: UIButton) {

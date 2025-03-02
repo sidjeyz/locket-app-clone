@@ -20,7 +20,9 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var continueButton: UIButton!
     
-    
+    weak var delegate: RegistrationDelegate?
+    var authorization = Authorization(name: "", password: "", email: "")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -35,7 +37,8 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
         continueButton.clipsToBounds = true
         continueButton.isEnabled = false
         continueButton.backgroundColor = UIColor.secondaryLabel
-        continueButton.setTitleColor(.white, for: .normal)
+        let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        continueButton.setAttributedTitle(attributedTitle, for: .normal)
         emailTextField.addTarget(self, action: #selector(emailTextFieldEditingChanged), for: .editingChanged)
         
         email()
@@ -75,14 +78,16 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
         continueButton.clipsToBounds = true
         if let email = sender.text, isValidEmail(email) {
             
-            continueButton.backgroundColor = UIColor.orange
-            continueButton.setTitleColor(.black, for: .normal)
+            continueButton.backgroundColor = UIColor.systemOrange
+            let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+            continueButton.setAttributedTitle(attributedTitle, for: .normal)
             continueButton.isEnabled = true
             
         } else {
             
             continueButton.backgroundColor = UIColor.secondaryLabel
-            continueButton.setTitleColor(.white, for: .normal)
+            let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            continueButton.setAttributedTitle(attributedTitle, for: .normal)
             continueButton.isEnabled = false
             
         }
@@ -116,7 +121,11 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
                 print("Не удалось найти RegistrationNameViewController в Storyboard")
             }
 
-        
+        authorization.email = emailTextField.text ?? ""
+        let nameVC = RegistrationNameViewController()
+        nameVC.delegate = delegate
+        nameVC.authorization = authorization
+        navigationController?.pushViewController(nameVC, animated: true)
     }
     
     func isValidEmail(_ email: String) -> Bool {

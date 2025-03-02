@@ -15,6 +15,10 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
     
+    weak var delegate: RegistrationDelegate?
+    var authorization: Authorization!
+
+    
     @IBAction func continueButton(_ sender: Any) {
 
         let storyboard = UIStoryboard(name: "RegPasswordViewController", bundle: nil)
@@ -23,7 +27,14 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
         } else {
             print("Не удалось найти RegPasswordViewController в Storyboard")
         }
-        }
+        
+        authorization.name = nameTextField.text ?? ""
+        let passwordVC = RegPasswordViewController()
+        passwordVC.delegate = delegate
+        passwordVC.authorization = authorization
+        navigationController?.pushViewController(nameVC, animated: true)
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
