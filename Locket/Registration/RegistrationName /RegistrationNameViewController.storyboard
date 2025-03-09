@@ -45,19 +45,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Bjv-1O-RBB"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="continue">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Продолжить">
-                                            <attributes>
-                                                <font key="NSFont" size="17" name="SFProRounded-Semibold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Продолжить" image="continue"/>
                                 <connections>
                                     <action selector="continueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OND-Wr-BD6"/>
                                 </connections>

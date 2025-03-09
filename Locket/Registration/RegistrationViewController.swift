@@ -17,11 +17,8 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
     
-    
     @IBOutlet weak var continueButton: UIButton!
     
-    weak var delegate: RegistrationDelegate?
-    var authorization = Authorization(name: "", password: "", email: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +26,13 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
         
         self.navigationItem.hidesBackButton = true
         
+        let placeholder = "Example@mail.ru"
+        emailTextField.attributedPlaceholder = NSAttributedString(
+                    string: placeholder,
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
+        emailTextField.text = ""
+        emailTextField.text = UserDefaults.standard.email
+
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -37,11 +41,18 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
         continueButton.clipsToBounds = true
         continueButton.isEnabled = false
         continueButton.backgroundColor = UIColor.secondaryLabel
-        let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
         continueButton.setAttributedTitle(attributedTitle, for: .normal)
+        
         emailTextField.addTarget(self, action: #selector(emailTextFieldEditingChanged), for: .editingChanged)
         
         email()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        emailTextField.text = ""
     }
     
     private func setup() {
@@ -71,24 +82,29 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     @objc func emailTextFieldEditingChanged(_ sender: UITextField) {
+        
         continueButton.layer.cornerRadius = 10
         continueButton.clipsToBounds = true
+        
         if let email = sender.text, isValidEmail(email) {
             
             continueButton.backgroundColor = UIColor.systemOrange
             let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
             continueButton.setAttributedTitle(attributedTitle, for: .normal)
             continueButton.isEnabled = true
+            continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
             
         } else {
             
             continueButton.backgroundColor = UIColor.secondaryLabel
-            let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
             continueButton.setAttributedTitle(attributedTitle, for: .normal)
             continueButton.isEnabled = false
+            continueButton.setImage(UIImage(named: "continue"), for: .normal)
             
         }
     }
@@ -109,6 +125,8 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
     
     @IBAction func continueButton(_ sender: Any) {
         
+        UserDefaults.standard.email = emailTextField.text
+        
             guard termsTextView != nil else {
                 print("termsTextView is nil")
                 return
@@ -120,18 +138,15 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
             } else {
                 print("Не удалось найти RegistrationNameViewController в Storyboard")
             }
-
-        authorization.email = emailTextField.text ?? ""
-        let nameVC = RegistrationNameViewController()
-        nameVC.delegate = delegate
-        nameVC.authorization = authorization
-        navigationController?.pushViewController(nameVC, animated: true)
+        
     }
     
     func isValidEmail(_ email: String) -> Bool {
+        
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
+        
     }
     
     private func moveTermsTextView(isUpwards: Bool, keyboardHeight: CGFloat, duration: Double) {
@@ -154,28 +169,38 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
 
     
     @objc func keyboardWillShow(notification: Notification) {
+        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
            let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+            
         {
+            
             moveTermsTextView(isUpwards: true, keyboardHeight: keyboardSize.height, duration: duration)
             
         }
     }
 
     @objc func keyboardWillHide(notification: Notification) {
+        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
             moveTermsTextView(isUpwards: false, keyboardHeight: keyboardSize.height, duration: 0)
+            
         }
     }
     
     func email(){
+        
         emailTextField.addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingDidBegin)
         view.addSubview(emailTextField)
+        
     }
     
     @objc func textFieldDidBeginEditing() {
-            emailTextField.text = ""
-        }
+        
+        emailTextField.text = ""
+        
+    }
 
     
 }

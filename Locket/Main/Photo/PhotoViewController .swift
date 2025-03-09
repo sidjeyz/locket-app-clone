@@ -39,7 +39,7 @@ class PhotoViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*cameraView.layer.cornerRadius = 48
+        cameraView.layer.cornerRadius = 64
         cameraView.clipsToBounds = true
         
         messageButton.layer.cornerRadius = messageButton.frame.size.width/2
@@ -72,7 +72,7 @@ class PhotoViewController: UIViewController{
         storyButton.clipsToBounds = true
         storyButton.isEnabled = false
         
-        checkCameraAuthorization()*/
+        checkCameraAuthorization()
         
     }
     

@@ -56,16 +56,16 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zj-Ug-1Fn">
                                 <rect key="frame" x="16" y="726" width="343" height="52"/>
-                                <color key="backgroundColor" red="1" green="0.53913906680000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="THH-UK-7jX"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                <buttonConfiguration key="configuration" style="filled" image="continue" title="Продолжить">
-                                    <fontDescription key="titleFontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
-                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Продолжить" image="continue">
+                                    <color key="titleColor" systemColor="systemGrayColor"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="continueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pY4-mn-AMe"/>
                                 </connections>
@@ -120,8 +120,8 @@
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

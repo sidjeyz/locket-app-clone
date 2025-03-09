@@ -15,45 +15,53 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
     
-    weak var delegate: RegistrationDelegate?
-    var authorization: Authorization!
-
     
-    @IBAction func continueButton(_ sender: Any) {
-
-        let storyboard = UIStoryboard(name: "RegPasswordViewController", bundle: nil)
-        if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegPasswordViewController") as? RegPasswordViewController {
-            navigationController?.pushViewController(regNameViewController, animated: true)
-        } else {
-            print("Не удалось найти RegPasswordViewController в Storyboard")
-        }
-        
-        authorization.name = nameTextField.text ?? ""
-        let passwordVC = RegPasswordViewController()
-        passwordVC.delegate = delegate
-        passwordVC.authorization = authorization
-        navigationController?.pushViewController(nameVC, animated: true)
-        
-    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
-        
+                
         nameTextField.delegate = self
+        let placeholder = "Имя"
+        nameTextField.attributedPlaceholder = NSAttributedString(
+                    string: placeholder,
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
+        nameTextField.text = UserDefaults.standard.name
         
         continueButton.layer.cornerRadius = 10
         continueButton.clipsToBounds = true
         continueButton.isEnabled = false
         continueButton.backgroundColor = UIColor.secondaryLabel
-        continueButton.setTitleColor(.white, for: .normal)
+        continueButton.setTitleColor(.systemGray, for: .normal)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        nameTextField.text = ""
+        
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
+        
+    }
+    
+    @IBAction func continueButton(_ sender: Any) {
+
+            UserDefaults.standard.name = nameTextField.text
+
+            
+            let storyboard = UIStoryboard(name: "RegPasswordViewController", bundle: nil)
+            if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegPasswordViewController") as? RegPasswordViewController {
+                navigationController?.pushViewController(regNameViewController, animated: true)
+            } else {
+                print("Не удалось найти RegPasswordViewController в Storyboard")
+            }
+        }
     
     private func moveTermsTextView(isUpwards: Bool, keyboardHeight: CGFloat, duration: Double) {
         
@@ -101,10 +109,7 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     
     
     
-    override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           self.navigationItem.hidesBackButton = true
-    }
+    
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             
@@ -113,11 +118,12 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
                     continueButton.backgroundColor = UIColor.orange
                     continueButton.setTitleColor(.black, for: .normal)
                     continueButton.isEnabled = true
+                    continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
                     
                 } else {
                     
                     continueButton.backgroundColor = UIColor.secondaryLabel
-                    continueButton.setTitleColor(.white, for: .normal)
+                    continueButton.setTitleColor(.systemGray, for: .normal)
                     continueButton.isEnabled = false
                     
                 }
@@ -129,4 +135,5 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
         nameTextField.text = ""
         
     }
+    
 }

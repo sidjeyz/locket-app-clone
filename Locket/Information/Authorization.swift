@@ -8,10 +8,19 @@
 import Foundation
 
 
-struct Authorization {
+extension UserDefaults {
+    var email: String? {
+        get { return string(forKey: "email") }
+        set { set(newValue, forKey: "email") }
+    }
     
-    var name: String
-    var password: String
-    var email: String
+    var password: String? {
+        get { return string(forKey: "password") }
+        set { set(newValue, forKey: "password") }
+    }
     
+    var name: String? {
+        get { return string(forKey: "name") }
+        set { set(newValue, forKey: "name") }
+    }
 }
