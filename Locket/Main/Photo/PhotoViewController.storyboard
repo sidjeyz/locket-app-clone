@@ -71,16 +71,6 @@
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-UG-ICc">
-                                <rect key="frame" x="44" y="609" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="pJH-3W-1kJ"/>
-                                    <constraint firstAttribute="height" constant="44" id="phj-N0-fQm"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="flash"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Q9-xA-txR">
                                 <rect key="frame" x="305" y="609" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,12 +126,15 @@
                                     <constraint firstAttribute="trailing" secondItem="tkD-hb-Mrb" secondAttribute="trailing" constant="129" id="hH9-z7-1qk"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="MyCustomImageButton" translatesAutoresizingMaskIntoConstraints="NO" id="mOh-Kc-fO7" customClass="MyCustomImageButton" customModule="Locket" customModuleProvider="target">
+                                <rect key="frame" x="44" y="609" width="43.666666666666657" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pS3-9H-gxM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="69R-bd-PdJ"/>
-                            <constraint firstItem="pS3-9H-gxM" firstAttribute="top" secondItem="Fjg-UG-ICc" secondAttribute="bottom" constant="82" id="8cs-0F-g9D"/>
                             <constraint firstItem="3dc-Xh-PkN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="APe-Tj-ZmG"/>
                             <constraint firstItem="pS3-9H-gxM" firstAttribute="top" secondItem="pYj-DT-AHI" secondAttribute="bottom" constant="62" id="Dwv-SW-Y2K"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Q9-xA-txR" secondAttribute="trailing" constant="44" id="KKE-3w-DbP"/>
@@ -149,16 +142,19 @@
                             <constraint firstItem="pS3-9H-gxM" firstAttribute="top" secondItem="2Q9-xA-txR" secondAttribute="bottom" constant="82" id="OjZ-OQ-lc1"/>
                             <constraint firstItem="3dc-Xh-PkN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="16" id="PAO-YR-Cx6"/>
                             <constraint firstItem="BHU-18-CKS" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Qwn-74-8vM"/>
-                            <constraint firstItem="Fjg-UG-ICc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="44" id="W0C-cE-7ce"/>
+                            <constraint firstItem="pYj-DT-AHI" firstAttribute="leading" secondItem="mOh-Kc-fO7" secondAttribute="trailing" constant="70.670000000000002" id="Z68-jZ-HN6"/>
                             <constraint firstItem="pYj-DT-AHI" firstAttribute="top" secondItem="0JV-y4-iA6" secondAttribute="bottom" constant="44" id="dlr-0E-8Tl"/>
                             <constraint firstItem="pYj-DT-AHI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="e0L-xm-T9s"/>
                             <constraint firstAttribute="bottom" secondItem="pS3-9H-gxM" secondAttribute="bottom" id="emY-0t-lOo"/>
                             <constraint firstItem="kID-CF-vGc" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="16" id="p10-aD-co8"/>
+                            <constraint firstItem="mOh-Kc-fO7" firstAttribute="top" secondItem="0JV-y4-iA6" secondAttribute="bottom" constant="56" id="pXO-qN-YfB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kID-CF-vGc" secondAttribute="trailing" constant="16" id="rCv-Ef-0Q2"/>
                             <constraint firstItem="0JV-y4-iA6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rXY-Eo-Zat"/>
                             <constraint firstItem="0JV-y4-iA6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sZF-ev-lXQ"/>
                             <constraint firstAttribute="trailing" secondItem="pS3-9H-gxM" secondAttribute="trailing" id="uEv-BB-IND"/>
                             <constraint firstItem="0JV-y4-iA6" firstAttribute="top" secondItem="kID-CF-vGc" secondAttribute="bottom" constant="44" id="uZ4-Wa-c4m"/>
+                            <constraint firstItem="pS3-9H-gxM" firstAttribute="top" secondItem="mOh-Kc-fO7" secondAttribute="bottom" constant="82" id="uus-0F-Byt"/>
+                            <constraint firstItem="mOh-Kc-fO7" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="44" id="xTJ-3h-zOO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -166,7 +162,6 @@
                         <outlet property="cameraRotation" destination="2Q9-xA-txR" id="GLd-Ja-tBV"/>
                         <outlet property="cameraView" destination="0JV-y4-iA6" id="PDw-Go-5HN"/>
                         <outlet property="downButton" destination="qjJ-RN-Tqt" id="eaO-dg-bm6"/>
-                        <outlet property="flashButton" destination="Fjg-UG-ICc" id="v2v-aT-VKH"/>
                         <outlet property="messageButton" destination="kID-CF-vGc" id="c70-cM-Iaw"/>
                         <outlet property="profileButton" destination="3dc-Xh-PkN" id="mBf-NN-227"/>
                         <outlet property="storyButton" destination="1PF-jY-CBW" id="kSn-9i-xRP"/>
@@ -184,7 +179,6 @@
         <image name="addFriend" width="24" height="24"/>
         <image name="cameraRotation" width="44.5" height="44.5"/>
         <image name="down" width="24" height="24"/>
-        <image name="flash" width="44" height="44.5"/>
         <image name="message" width="24" height="24"/>
         <image name="profile" width="24" height="24"/>
         <image name="story" width="24.5" height="24"/>

@@ -37,8 +37,6 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
         passwordTextField.delegate = self
         
-        passwordTextField.text = UserDefaults.standard.password
-        
         passwordTextField.isSecureTextEntry = true
         
         continueButton.layer.cornerRadius = 10
@@ -62,7 +60,7 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func continueButton(_ sender: Any) {
             
-        UserDefaults.standard.password = passwordTextField.text
+        Authorization.shared.password = passwordTextField.text
         
             let storyboard = UIStoryboard(name: "RegLoadingViewController", bundle: nil)
             if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegLoadingViewController") as? RegLoadingViewController {
@@ -149,10 +147,5 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
             
         }
     
-    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        passwordTextField.text = ""
-        
-    }
     
 }

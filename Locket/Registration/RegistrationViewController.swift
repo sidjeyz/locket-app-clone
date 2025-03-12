@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class RegistrationViewController: UIViewController, UITextViewDelegate{
+class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var emailTextField: UITextField!
        
@@ -19,7 +19,7 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var continueButton: UIButton!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -31,8 +31,7 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
                     string: placeholder,
                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
         emailTextField.text = ""
-        emailTextField.text = UserDefaults.standard.email
-
+        emailTextField.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -46,7 +45,6 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
         
         emailTextField.addTarget(self, action: #selector(emailTextFieldEditingChanged), for: .editingChanged)
         
-        email()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,8 +87,9 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
         
         continueButton.layer.cornerRadius = 10
         continueButton.clipsToBounds = true
+        let email = sender.text
         
-        if let email = sender.text, isValidEmail(email) {
+        if isValidEmail(email!) {
             
             continueButton.backgroundColor = UIColor.systemOrange
             let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
@@ -98,13 +97,15 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
             continueButton.isEnabled = true
             continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
             
-        } else {
+        } else if isValidEmail(email!) == false{
             
             continueButton.backgroundColor = UIColor.secondaryLabel
             let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
             continueButton.setAttributedTitle(attributedTitle, for: .normal)
             continueButton.isEnabled = false
             continueButton.setImage(UIImage(named: "continue"), for: .normal)
+            
+        } else {
             
         }
     }
@@ -125,13 +126,14 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
     
     @IBAction func continueButton(_ sender: Any) {
         
-        UserDefaults.standard.email = emailTextField.text
         
             guard termsTextView != nil else {
                 print("termsTextView is nil")
                 return
             }
 
+        Authorization.shared.email = emailTextField.text
+        
             let storyboard = UIStoryboard(name: "RegistrationNameViewController", bundle: nil)
             if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegistrationNameViewController") as? RegistrationNameViewController {
                 navigationController?.pushViewController(regNameViewController, animated: true)
@@ -188,19 +190,5 @@ class RegistrationViewController: UIViewController, UITextViewDelegate{
             
         }
     }
-    
-    func email(){
-        
-        emailTextField.addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingDidBegin)
-        view.addSubview(emailTextField)
-        
-    }
-    
-    @objc func textFieldDidBeginEditing() {
-        
-        emailTextField.text = ""
-        
-    }
-
     
 }

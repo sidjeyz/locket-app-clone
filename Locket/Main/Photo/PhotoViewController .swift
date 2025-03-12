@@ -61,8 +61,7 @@ class PhotoViewController: UIViewController{
         cameraRotation.addTarget(self, action: #selector(clickAnimation(_:)), for: .touchDown)
         cameraRotation.addTarget(self, action: #selector(returnAnimation(_:)), for: [.touchUpInside, .touchUpOutside])
 
-        flashButton.addTarget(self, action: #selector(clickAnimation(_:)), for: .touchDown)
-        flashButton.addTarget(self, action: #selector(returnAnimation(_:)), for: [.touchUpInside, .touchUpOutside])
+       
         
         addFriendButton.layer.cornerRadius = addFriendButton.frame.size.height/2
         addFriendButton.clipsToBounds = true
@@ -72,7 +71,7 @@ class PhotoViewController: UIViewController{
         storyButton.clipsToBounds = true
         storyButton.isEnabled = false
         
-        checkCameraAuthorization()
+        //checkCameraAuthorization()
         
     }
     
@@ -97,7 +96,7 @@ class PhotoViewController: UIViewController{
         })
     }
     
-    func checkCameraAuthorization() {
+    /*func checkCameraAuthorization() {
             switch AVCaptureDevice.authorizationStatus(for: .video) {
             case .authorized:
                 // Разрешение уже предоставлено
@@ -154,7 +153,7 @@ class PhotoViewController: UIViewController{
             view.layer.addSublayer(videoPreviewLayer)
             
             captureSession?.startRunning()
-        }
+    }*/
         
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)

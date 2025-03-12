@@ -16,7 +16,6 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
     
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,25 +24,24 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
         view.addGestureRecognizer(tapGesture)
                 
         nameTextField.delegate = self
+        
         let placeholder = "Имя"
         nameTextField.attributedPlaceholder = NSAttributedString(
                     string: placeholder,
                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
-        nameTextField.text = UserDefaults.standard.name
         
         continueButton.layer.cornerRadius = 10
         continueButton.clipsToBounds = true
         continueButton.isEnabled = false
         continueButton.backgroundColor = UIColor.secondaryLabel
         continueButton.setTitleColor(.systemGray, for: .normal)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        nameTextField.text = ""
         
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
@@ -52,7 +50,7 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func continueButton(_ sender: Any) {
 
-            UserDefaults.standard.name = nameTextField.text
+        Authorization.shared.name = nameTextField.text
 
             
             let storyboard = UIStoryboard(name: "RegPasswordViewController", bundle: nil)
@@ -112,28 +110,22 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
             
-                if let text = nameTextField.text, !text.isEmpty || !string.isEmpty {
-                    
-                    continueButton.backgroundColor = UIColor.orange
-                    continueButton.setTitleColor(.black, for: .normal)
-                    continueButton.isEnabled = true
-                    continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
-                    
-                } else {
-                    
-                    continueButton.backgroundColor = UIColor.secondaryLabel
-                    continueButton.setTitleColor(.systemGray, for: .normal)
-                    continueButton.isEnabled = false
-                    
-                }
-                return true
+        if updatedText.count >= 1 {
+            continueButton.backgroundColor = UIColor.orange
+            continueButton.setTitleColor(.black, for: .normal)
+            continueButton.isEnabled = true
+            continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
+        } else {
+            continueButton.backgroundColor = UIColor.secondaryLabel
+            continueButton.setTitleColor(.systemGray, for: .normal)
+            continueButton.isEnabled = false
         }
-    
-    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        nameTextField.text = ""
-        
+        return true
     }
     
 }
