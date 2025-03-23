@@ -24,16 +24,13 @@ class RegLoadingViewController: UIViewController{
     
     override func viewDidLoad() {
         
-        testAuthorizationService()
-        loading.startAnimating()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.loading.stopAnimating() 
+            self.loading.stopAnimating()
             
             let storyboard = UIStoryboard(name: "MainViewController", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
             self.navigationController?.pushViewController(vc, animated: true)
-        
             
         }
         

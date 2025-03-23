@@ -15,20 +15,21 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
     
+    public var auth: Authorization = .init()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
-                
+        
         nameTextField.delegate = self
+        nameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
         let placeholder = "Имя"
         nameTextField.attributedPlaceholder = NSAttributedString(
-                    string: placeholder,
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
         
         continueButton.layer.cornerRadius = 10
         continueButton.clipsToBounds = true
@@ -38,7 +39,7 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,17 +50,17 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func continueButton(_ sender: Any) {
-
-        Authorization.shared.name = nameTextField.text
-
-            
-            let storyboard = UIStoryboard(name: "RegPasswordViewController", bundle: nil)
-            if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegPasswordViewController") as? RegPasswordViewController {
-                navigationController?.pushViewController(regNameViewController, animated: true)
-            } else {
-                print("Не удалось найти RegPasswordViewController в Storyboard")
-            }
+        
+        self.auth.name = nameTextField.text ?? ""
+        
+        let storyboard = UIStoryboard(name: "RegPasswordViewController", bundle: nil)
+        if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegPasswordViewController") as? RegPasswordViewController {
+            navigationController?.pushViewController(regNameViewController, animated: true)
+        } else {
+            print("Не удалось найти RegPasswordViewController в Storyboard")
         }
+        
+    }
     
     private func moveTermsTextView(isUpwards: Bool, keyboardHeight: CGFloat, duration: Double) {
         
@@ -68,7 +69,7 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
         print(bottomPadding)
         
         self.buttonBottomConstraint.constant = isUpwards ? (keyboardHeight - bottomPadding + 22) : 0
-   
+        
         
         
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut, animations: {
@@ -87,35 +88,33 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-            
-            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                moveTermsTextView(isUpwards: false, keyboardHeight: keyboardSize.height, duration: 0)
-            }
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            moveTermsTextView(isUpwards: false, keyboardHeight: keyboardSize.height, duration: 0)
         }
+    }
     
     @objc func dismissKeyboard() {
-            
-            nameTextField.resignFirstResponder()
-            
-        }
+        
+        nameTextField.resignFirstResponder()
+        
+    }
     
     @IBAction func backButton(_ sender: Any) {
         
         navigationController?.popViewController(animated: true)
-    
+        
     }
     
     
     
     
-
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    
+    @objc func textFieldDidChange() {
         
-        let currentText = textField.text ?? ""
-        guard let stringRange = Range(range, in: currentText) else { return false }
-        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            
-        if updatedText.count >= 1 {
+        let text = nameTextField.text
+        
+        if text!.count >= 1 {
             continueButton.backgroundColor = UIColor.orange
             continueButton.setTitleColor(.black, for: .normal)
             continueButton.isEnabled = true
@@ -125,7 +124,6 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate{
             continueButton.setTitleColor(.systemGray, for: .normal)
             continueButton.isEnabled = false
         }
-        return true
+        
     }
-    
 }

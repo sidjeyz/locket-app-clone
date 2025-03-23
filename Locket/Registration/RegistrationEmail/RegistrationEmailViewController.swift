@@ -7,10 +7,10 @@
 
 import Foundation
 import UIKit
-class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate{
+class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var emailTextField: UITextField!
-       
+    
     @IBOutlet weak var emailLabel: UILabel!
     
     @IBOutlet weak var termsTextView: UITextView!
@@ -19,6 +19,7 @@ class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFi
     
     @IBOutlet weak var continueButton: UIButton!
     
+    private var auth: Authorization = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,8 @@ class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFi
         
         let placeholder = "Example@mail.ru"
         emailTextField.attributedPlaceholder = NSAttributedString(
-                    string: placeholder,
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
         emailTextField.text = ""
         emailTextField.delegate = self
         
@@ -77,9 +78,9 @@ class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFi
         self.termsTextView.attributedText = termsText
         self.termsTextView.isEditable = false // Убедитесь, что текстовое поле не редактируемое
         self.termsTextView.isSelectable = true // Позволяем выбор текста
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
@@ -126,20 +127,14 @@ class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFi
     
     @IBAction func continueButton(_ sender: Any) {
         
+        self.auth.email = emailTextField.text ?? ""
         
-            guard termsTextView != nil else {
-                print("termsTextView is nil")
-                return
-            }
-
-        Authorization.shared.email = emailTextField.text
-        
-            let storyboard = UIStoryboard(name: "RegistrationNameViewController", bundle: nil)
-            if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegistrationNameViewController") as? RegistrationNameViewController {
-                navigationController?.pushViewController(regNameViewController, animated: true)
-            } else {
-                print("Не удалось найти RegistrationNameViewController в Storyboard")
-            }
+        let storyboard = UIStoryboard(name: "RegistrationNameViewController", bundle: nil)
+        if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegistrationNameViewController") as? RegistrationNameViewController {
+            navigationController?.pushViewController(regNameViewController, animated: true)
+        } else {
+            print("Не удалось найти RegistrationNameViewController в Storyboard")
+        }
         
     }
     
@@ -158,7 +153,7 @@ class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFi
         print(bottomPadding)
         
         self.buttonBottomConstraint.constant = isUpwards ? (keyboardHeight - bottomPadding + 22) : 0
-   
+        
         
         
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut, animations: {
@@ -168,7 +163,7 @@ class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFi
         
     }
     
-
+    
     
     @objc func keyboardWillShow(notification: Notification) {
         
@@ -181,7 +176,7 @@ class RegistrationViewController: UIViewController, UITextViewDelegate, UITextFi
             
         }
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {

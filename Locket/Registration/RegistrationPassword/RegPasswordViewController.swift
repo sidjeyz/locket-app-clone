@@ -26,6 +26,8 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    private var auth: Authorization = .init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,8 +35,8 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tapGesture)
         let placeholder = ""
         passwordTextField.attributedPlaceholder = NSAttributedString(
-                    string: placeholder,
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
         passwordTextField.delegate = self
         
         passwordTextField.isSecureTextEntry = true
@@ -59,55 +61,56 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func continueButton(_ sender: Any) {
-            
-        Authorization.shared.password = passwordTextField.text
         
-            let storyboard = UIStoryboard(name: "RegLoadingViewController", bundle: nil)
-            if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegLoadingViewController") as? RegLoadingViewController {
-                navigationController?.pushViewController(regNameViewController, animated: true)
-            } else {
-                
-                print("Не удалось найти RegLoadingViewController в Storyboard")
-                
-            }
+        
+        self.auth.password = passwordTextField.text ?? ""
+        
+        let storyboard = UIStoryboard(name: "RegLoadingViewController", bundle: nil)
+        if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegLoadingViewController") as? RegLoadingViewController {
+            navigationController?.pushViewController(regNameViewController, animated: true)
+        } else {
+            
+            print("Не удалось найти RegLoadingViewController в Storyboard")
             
         }
+        
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            let isPasswordValid = isValidPassword(updatedText)
-            updateContinueButtonState(isEnabled: isPasswordValid)
-            return true
         
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        let isPasswordValid = isValidPassword(updatedText)
+        updateContinueButtonState(isEnabled: isPasswordValid)
+        return true
+        
+    }
+    
+    func isValidPassword(_ password: String) -> Bool {
+        let hasUppercase = password.rangeOfCharacter(from: .uppercaseLetters) != nil
+        let hasNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
+        let isLongEnough = password.count >= 8
+        return hasUppercase && hasNumber && isLongEnough
+    }
+    
+    private func updateContinueButtonState(isEnabled: Bool) {
+        if isEnabled {
+            continueButton.backgroundColor = UIColor.orange
+            continueButton.setTitleColor(.black, for: .normal)
+            continueButton.isEnabled = true
+            continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
+            
+        } else {
+            continueButton.backgroundColor = UIColor.secondaryLabel
+            continueButton.setTitleColor(.systemGray, for: .normal)
+            continueButton.isEnabled = false
+            continueButton.setImage(UIImage(named: "continue"), for: .normal)
+            
         }
-
-        func isValidPassword(_ password: String) -> Bool {
-            let hasUppercase = password.rangeOfCharacter(from: .uppercaseLetters) != nil
-            let hasNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
-            let isLongEnough = password.count >= 8 
-            return hasUppercase && hasNumber && isLongEnough
-        }
-
-        private func updateContinueButtonState(isEnabled: Bool) {
-            if isEnabled {
-                continueButton.backgroundColor = UIColor.orange
-                continueButton.setTitleColor(.black, for: .normal)
-                continueButton.isEnabled = true
-                continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
-                
-            } else {
-                continueButton.backgroundColor = UIColor.secondaryLabel
-                continueButton.setTitleColor(.systemGray, for: .normal)
-                continueButton.isEnabled = false
-                continueButton.setImage(UIImage(named: "continue"), for: .normal)
-                
-            }
-        }
-
-
+    }
+    
+    
     
     private func moveTermsTextView(isUpwards: Bool, keyboardHeight: CGFloat, duration: Double) {
         
@@ -116,7 +119,7 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
         print(bottomPadding)
         
         self.buttonBottomConstraint.constant = isUpwards ? (keyboardHeight - bottomPadding + 22) : 0
-   
+        
         
         
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut, animations: {
@@ -135,17 +138,17 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-            
-            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                moveTermsTextView(isUpwards: false, keyboardHeight: keyboardSize.height, duration: 0)
-            }
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            moveTermsTextView(isUpwards: false, keyboardHeight: keyboardSize.height, duration: 0)
         }
+    }
     
     @objc func dismissKeyboard() {
-            
-            passwordTextField.resignFirstResponder()
-            
-        }
+        
+        passwordTextField.resignFirstResponder()
+        
+    }
     
     
 }

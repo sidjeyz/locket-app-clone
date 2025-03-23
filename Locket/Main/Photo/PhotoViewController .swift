@@ -16,10 +16,9 @@ class PhotoViewController: UIViewController{
     @IBOutlet weak var takePhotoButton: UIButton!
     
     @IBOutlet weak var cameraView: UIView!
+        
+    @IBOutlet weak var myCustomButton: MyCustomImageButton!
     
-    @IBOutlet weak var flashButton: UIButton!
-    
-    @IBOutlet weak var cameraRotation: UIButton!
     
     @IBOutlet weak var profileButton: UIButton!
     
@@ -36,8 +35,13 @@ class PhotoViewController: UIViewController{
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
+    private var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        flashButton()
+        cameraRotation()
         
         cameraView.layer.cornerRadius = 64
         cameraView.clipsToBounds = true
@@ -55,13 +59,6 @@ class PhotoViewController: UIViewController{
         takePhotoButton.layer.borderColor = UIColor.orange.cgColor
         takePhotoButton.layer.borderWidth = 4
         takePhotoButton.isEnabled = true
-        takePhotoButton.addTarget(self, action: #selector(clickAnimation(_:)), for: .touchDown)
-        takePhotoButton.addTarget(self, action: #selector(returnAnimation(_:)), for: [.touchUpInside, .touchUpOutside])
-
-        cameraRotation.addTarget(self, action: #selector(clickAnimation(_:)), for: .touchDown)
-        cameraRotation.addTarget(self, action: #selector(returnAnimation(_:)), for: [.touchUpInside, .touchUpOutside])
-
-       
         
         addFriendButton.layer.cornerRadius = addFriendButton.frame.size.height/2
         addFriendButton.clipsToBounds = true
@@ -80,20 +77,6 @@ class PhotoViewController: UIViewController{
         
         self.navigationItem.hidesBackButton = true
         
-    }
-    
-    @objc func clickAnimation(_ sender: UIButton) {
-            // Анимация нажатия
-            UIView.animate(withDuration: 0.1, animations: {
-                sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-            })
-        }
-
-    @objc func returnAnimation(_ sender: UIButton) {
-        // Анимация возврата в исходное состояние
-        UIView.animate(withDuration: 0.1, animations: {
-            sender.transform = CGAffineTransform.identity
-        })
     }
     
     /*func checkCameraAuthorization() {
@@ -164,4 +147,43 @@ class PhotoViewController: UIViewController{
         }
 
     
+    func flashButton(){
+        
+        let buttonFlash = MyCustomImageButton(frame: CGRect(x: 44, y: 609, width: 44, height: 44))
+        buttonFlash.backgroundColor = .clear
+        
+        image = UIImageView()
+        image.image = UIImage(named: "flash")
+        image.contentMode = .scaleAspectFit
+        image.translatesAutoresizingMaskIntoConstraints = false
+        buttonFlash.addSubview(image)
+        
+        NSLayoutConstraint.activate([
+            image.topAnchor.constraint(equalTo: buttonFlash.topAnchor),
+            image.bottomAnchor.constraint(equalTo: buttonFlash.bottomAnchor),
+            image.leadingAnchor.constraint(equalTo: buttonFlash.leadingAnchor),
+            image.trailingAnchor.constraint(equalTo: buttonFlash.trailingAnchor)
+        ])
+        self.view.addSubview(buttonFlash)
+        
+    }
+    
+    func cameraRotation(){
+        let buttonCameraRotation = MyCustomImageButton(frame: CGRect(x: 305, y: 609, width: 44, height: 44))
+        buttonCameraRotation.backgroundColor = .clear
+        
+        image = UIImageView()
+        image.image = UIImage(named: "cameraRotation")
+        image.contentMode = .scaleAspectFit
+        image.translatesAutoresizingMaskIntoConstraints = false
+        buttonCameraRotation.addSubview(image)
+        
+        NSLayoutConstraint.activate([
+            image.topAnchor.constraint(equalTo: buttonCameraRotation.topAnchor),
+            image.bottomAnchor.constraint(equalTo: buttonCameraRotation.bottomAnchor),
+            image.leadingAnchor.constraint(equalTo: buttonCameraRotation.leadingAnchor),
+            image.trailingAnchor.constraint(equalTo: buttonCameraRotation.trailingAnchor)
+        ])
+        self.view.addSubview(buttonCameraRotation)
+    }
 }

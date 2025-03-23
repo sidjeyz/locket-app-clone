@@ -11,14 +11,15 @@ import UIKit
 
 class MyCustomImageButton: UIView{
     
-    private var imageView: UIView!
-    private var flashImageView: UIImageView!
-    
-    
-    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    }
+    
+    @objc private func handleTap(){
+        
+        
         
     }
     
@@ -26,42 +27,60 @@ class MyCustomImageButton: UIView{
         
         super.init(coder: coder)
         
-        imageView = UIView()
-                imageView.translatesAutoresizingMaskIntoConstraints = false
-                addSubview(imageView)
-
-                
-                flashImageView = UIImageView()
-                flashImageView.image = UIImage(named: "flash")
-                flashImageView.contentMode = .scaleAspectFit
-                flashImageView.translatesAutoresizingMaskIntoConstraints = false
-                imageView.addSubview(flashImageView)
-                
-                NSLayoutConstraint.activate([
-                    imageView.widthAnchor.constraint(equalToConstant: 44),
-                    imageView.heightAnchor.constraint(equalToConstant: 44),
-                    imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                    imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-                ])
-                
-                NSLayoutConstraint.activate([
-                    flashImageView.topAnchor.constraint(equalTo: imageView.topAnchor),
-                    flashImageView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
-                    flashImageView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-                    flashImageView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor)
-                ])
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        highlightedState()
         
     }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        defaultState()
+        
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        defaultState()
+        
+    }
+    
+    private func highlightedState() {
+        
+        let animator = buttonAnimator { [weak self] in
+            self?.alpha = 0.9
+            self?.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }
+        animator.startAnimation()
+    }
+    
+    private func defaultState() {
+        
+        let animator = buttonAnimator { [weak self] in
+            self?.alpha = 1
+            self?.transform = .identity
+        }
+        animator.startAnimation()
+    }
+    
+    private func buttonAnimator(with animations: @escaping() -> Void) -> UIViewPropertyAnimator{
+        
+        let timingParameters = UISpringTimingParameters(dampingRatio: 0.5, initialVelocity: .zero)
+        let animator = UIViewPropertyAnimator(duration: 0.35, timingParameters: timingParameters)
+        animator.addAnimations(animations)
+        return animator
+        
+    }
+    
 }
 
 
 class MyCustomTextButton{
+    
+    
     
 }
