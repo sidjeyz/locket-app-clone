@@ -115,39 +115,53 @@
                                     <constraint firstAttribute="trailing" secondItem="tkD-hb-Mrb" secondAttribute="trailing" constant="129" id="hH9-z7-1qk"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" restorationIdentifier="MyCustomImageButton" translatesAutoresizingMaskIntoConstraints="NO" id="mOh-Kc-fO7" customClass="MyCustomImageButton" customModule="Locket" customModuleProvider="target">
-                                <rect key="frame" x="44" y="609" width="43.666666666666657" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOh-Kc-fO7" userLabel="flash" customClass="MyCustomImageButton" customModule="Locket" customModuleProvider="target">
+                                <rect key="frame" x="44" y="611" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="IMB-0V-pFV"/>
+                                    <constraint firstAttribute="width" constant="44" id="ZUf-Fn-h6h"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKg-tc-tw9" userLabel="cameraRotation" customClass="MyCustomImageButton" customModule="Locket" customModuleProvider="target">
+                                <rect key="frame" x="305" y="611" width="44" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="NaM-GF-adi"/>
+                                    <constraint firstAttribute="height" constant="44" id="cod-Or-G7d"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NKg-tc-tw9" firstAttribute="top" secondItem="0JV-y4-iA6" secondAttribute="bottom" constant="58" id="3Ch-9b-NBV"/>
                             <constraint firstItem="pS3-9H-gxM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="69R-bd-PdJ"/>
                             <constraint firstItem="3dc-Xh-PkN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="APe-Tj-ZmG"/>
                             <constraint firstItem="pS3-9H-gxM" firstAttribute="top" secondItem="pYj-DT-AHI" secondAttribute="bottom" constant="62" id="Dwv-SW-Y2K"/>
                             <constraint firstItem="BHU-18-CKS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="N63-HN-Cci"/>
                             <constraint firstItem="3dc-Xh-PkN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="16" id="PAO-YR-Cx6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NKg-tc-tw9" secondAttribute="trailing" constant="44" id="PfT-Jc-7KF"/>
                             <constraint firstItem="BHU-18-CKS" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Qwn-74-8vM"/>
-                            <constraint firstItem="pYj-DT-AHI" firstAttribute="leading" secondItem="mOh-Kc-fO7" secondAttribute="trailing" constant="70.670000000000002" id="Z68-jZ-HN6"/>
                             <constraint firstItem="pYj-DT-AHI" firstAttribute="top" secondItem="0JV-y4-iA6" secondAttribute="bottom" constant="44" id="dlr-0E-8Tl"/>
                             <constraint firstItem="pYj-DT-AHI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="e0L-xm-T9s"/>
                             <constraint firstAttribute="bottom" secondItem="pS3-9H-gxM" secondAttribute="bottom" id="emY-0t-lOo"/>
+                            <constraint firstItem="mOh-Kc-fO7" firstAttribute="top" secondItem="0JV-y4-iA6" secondAttribute="bottom" constant="58" id="kcn-D9-ZBe"/>
                             <constraint firstItem="kID-CF-vGc" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="16" id="p10-aD-co8"/>
-                            <constraint firstItem="mOh-Kc-fO7" firstAttribute="top" secondItem="0JV-y4-iA6" secondAttribute="bottom" constant="56" id="pXO-qN-YfB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kID-CF-vGc" secondAttribute="trailing" constant="16" id="rCv-Ef-0Q2"/>
                             <constraint firstItem="0JV-y4-iA6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rXY-Eo-Zat"/>
                             <constraint firstItem="0JV-y4-iA6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sZF-ev-lXQ"/>
                             <constraint firstAttribute="trailing" secondItem="pS3-9H-gxM" secondAttribute="trailing" id="uEv-BB-IND"/>
                             <constraint firstItem="0JV-y4-iA6" firstAttribute="top" secondItem="kID-CF-vGc" secondAttribute="bottom" constant="44" id="uZ4-Wa-c4m"/>
-                            <constraint firstItem="pS3-9H-gxM" firstAttribute="top" secondItem="mOh-Kc-fO7" secondAttribute="bottom" constant="82" id="uus-0F-Byt"/>
                             <constraint firstItem="mOh-Kc-fO7" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="44" id="xTJ-3h-zOO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addFriendButton" destination="BHU-18-CKS" id="W7K-S5-4Lk"/>
+                        <outlet property="cameraRotation" destination="NKg-tc-tw9" id="n0A-Yb-i5O"/>
                         <outlet property="cameraView" destination="0JV-y4-iA6" id="PDw-Go-5HN"/>
                         <outlet property="downButton" destination="qjJ-RN-Tqt" id="eaO-dg-bm6"/>
+                        <outlet property="flash" destination="mOh-Kc-fO7" id="s6c-FD-blR"/>
                         <outlet property="messageButton" destination="kID-CF-vGc" id="c70-cM-Iaw"/>
                         <outlet property="myCustomButton" destination="mOh-Kc-fO7" id="goa-EN-uNu"/>
                         <outlet property="profileButton" destination="3dc-Xh-PkN" id="mBf-NN-227"/>

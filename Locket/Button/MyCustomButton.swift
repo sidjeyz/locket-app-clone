@@ -11,10 +11,13 @@ import UIKit
 
 class MyCustomImageButton: UIView{
     
+    var image = UIImageView()
+    var onTap: (() -> Void)?
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        
+        setupImage()
     }
     
     @objc private func handleTap(){
@@ -26,15 +29,14 @@ class MyCustomImageButton: UIView{
     required init?(coder: NSCoder) {
         
         super.init(coder: coder)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        setupImage()
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         highlightedState()
-        
+        onTap?()
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -76,6 +78,20 @@ class MyCustomImageButton: UIView{
         
     }
     
+    
+    func setupImage(){
+        
+        image.contentMode = .scaleAspectFit
+        image.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(image)
+        NSLayoutConstraint.activate([
+            image.topAnchor.constraint(equalTo: topAnchor),
+            image.bottomAnchor.constraint(equalTo: bottomAnchor),
+            image.leadingAnchor.constraint(equalTo: leadingAnchor),
+            image.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+
+    }
 }
 
 

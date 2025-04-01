@@ -19,6 +19,9 @@ class PhotoViewController: UIViewController{
         
     @IBOutlet weak var myCustomButton: MyCustomImageButton!
     
+    @IBOutlet weak var flash: MyCustomImageButton!
+    
+    @IBOutlet weak var cameraRotation: MyCustomImageButton!
     
     @IBOutlet weak var profileButton: UIButton!
     
@@ -35,13 +38,19 @@ class PhotoViewController: UIViewController{
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
-    private var image: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        flashButton()
-        cameraRotation()
+        cameraRotation.image.image = UIImage(named: "cameraRotation")
+        flash.image.image = UIImage(named: "flash")
+        
+        cameraRotation.onTap = {
+            print("cameraRotation вкл")
+        }
+        
+        flash.onTap = {
+            print("flash вкл")
+        }
         
         cameraView.layer.cornerRadius = 64
         cameraView.clipsToBounds = true
@@ -145,45 +154,4 @@ class PhotoViewController: UIViewController{
                 captureSession?.stopRunning()
             }
         }
-
-    
-    func flashButton(){
-        
-        let buttonFlash = MyCustomImageButton(frame: CGRect(x: 44, y: 609, width: 44, height: 44))
-        buttonFlash.backgroundColor = .clear
-        
-        image = UIImageView()
-        image.image = UIImage(named: "flash")
-        image.contentMode = .scaleAspectFit
-        image.translatesAutoresizingMaskIntoConstraints = false
-        buttonFlash.addSubview(image)
-        
-        NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: buttonFlash.topAnchor),
-            image.bottomAnchor.constraint(equalTo: buttonFlash.bottomAnchor),
-            image.leadingAnchor.constraint(equalTo: buttonFlash.leadingAnchor),
-            image.trailingAnchor.constraint(equalTo: buttonFlash.trailingAnchor)
-        ])
-        self.view.addSubview(buttonFlash)
-        
-    }
-    
-    func cameraRotation(){
-        let buttonCameraRotation = MyCustomImageButton(frame: CGRect(x: 305, y: 609, width: 44, height: 44))
-        buttonCameraRotation.backgroundColor = .clear
-        
-        image = UIImageView()
-        image.image = UIImage(named: "cameraRotation")
-        image.contentMode = .scaleAspectFit
-        image.translatesAutoresizingMaskIntoConstraints = false
-        buttonCameraRotation.addSubview(image)
-        
-        NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: buttonCameraRotation.topAnchor),
-            image.bottomAnchor.constraint(equalTo: buttonCameraRotation.bottomAnchor),
-            image.leadingAnchor.constraint(equalTo: buttonCameraRotation.leadingAnchor),
-            image.trailingAnchor.constraint(equalTo: buttonCameraRotation.trailingAnchor)
-        ])
-        self.view.addSubview(buttonCameraRotation)
-    }
 }
