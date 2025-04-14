@@ -30,6 +30,15 @@
 		5ED23F1B2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED23F1A2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard */; };
 		5EE85C6E2D6FAFE400EA10C9 /* PhotoViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE85C6D2D6FAFE400EA10C9 /* PhotoViewController .swift */; };
 		5EE85C702D6FAFFB00EA10C9 /* PhotoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE85C6F2D6FAFFB00EA10C9 /* PhotoViewController.storyboard */; };
+		D8211D1C2DAD7E4500ABE166 /* RegistrantionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8211D1B2DAD7E4000ABE166 /* RegistrantionService.swift */; };
+		D8211D1E2DAD7F4900ABE166 /* RegistrationEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8211D1D2DAD7F4000ABE166 /* RegistrationEmailPresenter.swift */; };
+		D8211D262DAD81B400ABE166 /* EmailSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8211D222DAD81B400ABE166 /* EmailSceneInteractor.swift */; };
+		D8211D272DAD81B400ABE166 /* EmailSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8211D1F2DAD81B400ABE166 /* EmailSceneController.swift */; };
+		D8211D282DAD81B400ABE166 /* EmailSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8211D232DAD81B400ABE166 /* EmailSceneModels.swift */; };
+		D8211D292DAD81B400ABE166 /* EmailScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8211D242DAD81B400ABE166 /* EmailScenePresenter.swift */; };
+		D8211D2A2DAD81B400ABE166 /* EmailSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8211D212DAD81B400ABE166 /* EmailSceneFactory.swift */; };
+		D8211D2B2DAD81B400ABE166 /* EmailSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8211D252DAD81B400ABE166 /* EmailSceneRouter.swift */; };
+		D8211D2C2DAD81B400ABE166 /* EmailSceneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8211D202DAD81B400ABE166 /* EmailSceneController.xib */; };
 		D84043FF2CBC45E00054922A /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */; };
 		D84044002CBC45E00054922A /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */; };
 		D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */; };
@@ -68,6 +77,15 @@
 		5ED23F1A2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationNameViewController.storyboard; sourceTree = "<group>"; };
 		5EE85C6D2D6FAFE400EA10C9 /* PhotoViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoViewController .swift"; sourceTree = "<group>"; };
 		5EE85C6F2D6FAFFB00EA10C9 /* PhotoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoViewController.storyboard; sourceTree = "<group>"; };
+		D8211D1B2DAD7E4000ABE166 /* RegistrantionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrantionService.swift; sourceTree = "<group>"; };
+		D8211D1D2DAD7F4000ABE166 /* RegistrationEmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationEmailPresenter.swift; sourceTree = "<group>"; };
+		D8211D1F2DAD81B400ABE166 /* EmailSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSceneController.swift; sourceTree = "<group>"; };
+		D8211D202DAD81B400ABE166 /* EmailSceneController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailSceneController.xib; sourceTree = "<group>"; };
+		D8211D212DAD81B400ABE166 /* EmailSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSceneFactory.swift; sourceTree = "<group>"; };
+		D8211D222DAD81B400ABE166 /* EmailSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSceneInteractor.swift; sourceTree = "<group>"; };
+		D8211D232DAD81B400ABE166 /* EmailSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSceneModels.swift; sourceTree = "<group>"; };
+		D8211D242DAD81B400ABE166 /* EmailScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailScenePresenter.swift; sourceTree = "<group>"; };
+		D8211D252DAD81B400ABE166 /* EmailSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSceneRouter.swift; sourceTree = "<group>"; };
 		D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -166,10 +184,12 @@
 		5ECE27A02CD8E99A0079795C /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				D8211D1B2DAD7E4000ABE166 /* RegistrantionService.swift */,
 				5EF4F1862D8D850E00843949 /* RegistrationEmail */,
 				5ED23F122D3EDE6B00B47A7A /* RegistrationName  */,
 				5ED23F132D3EDE9200B47A7A /* RegistrationPassword */,
 				5E9AA0192D61151900246E60 /* RegistrationLoading */,
+				D8211D2D2DAD81BD00ABE166 /* Scene */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -213,10 +233,25 @@
 		5EF4F1862D8D850E00843949 /* RegistrationEmail */ = {
 			isa = PBXGroup;
 			children = (
+				D8211D1D2DAD7F4000ABE166 /* RegistrationEmailPresenter.swift */,
 				5ECE27A22CD8EA120079795C /* RegistrationEmailViewController.swift */,
 				5ECE27A12CD8EA120079795C /* RegistrationEmailViewController.storyboard */,
 			);
 			path = RegistrationEmail;
+			sourceTree = "<group>";
+		};
+		D8211D2D2DAD81BD00ABE166 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				D8211D1F2DAD81B400ABE166 /* EmailSceneController.swift */,
+				D8211D202DAD81B400ABE166 /* EmailSceneController.xib */,
+				D8211D212DAD81B400ABE166 /* EmailSceneFactory.swift */,
+				D8211D222DAD81B400ABE166 /* EmailSceneInteractor.swift */,
+				D8211D232DAD81B400ABE166 /* EmailSceneModels.swift */,
+				D8211D242DAD81B400ABE166 /* EmailScenePresenter.swift */,
+				D8211D252DAD81B400ABE166 /* EmailSceneRouter.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		D84043F52CBC456D0054922A /* Fonts */ = {
@@ -299,6 +334,7 @@
 				5E099B3F2CB84A8A0056F226 /* LaunchScreen.storyboard in Resources */,
 				D84044032CBC45E00054922A /* SF-Pro-Rounded-Light.otf in Resources */,
 				D84044072CBC45E00054922A /* SF-Pro-Rounded-Medium.otf in Resources */,
+				D8211D2C2DAD81B400ABE166 /* EmailSceneController.xib in Resources */,
 				5ED23F172D3EDF6000B47A7A /* RegPasswordViewController.storyboard in Resources */,
 				D84044052CBC45E00054922A /* SF-Pro-Rounded-Black.otf in Resources */,
 				5ECE27A32CD8EA130079795C /* RegistrationEmailViewController.storyboard in Resources */,
@@ -326,10 +362,17 @@
 				5EB419DC2D77DDBF0068F01A /* MainViewController.swift in Sources */,
 				5E099B372CB84A880056F226 /* ViewController.swift in Sources */,
 				5E9AA01D2D61156A00246E60 /* RegLoadingViewController.swift in Sources */,
+				D8211D262DAD81B400ABE166 /* EmailSceneInteractor.swift in Sources */,
+				D8211D272DAD81B400ABE166 /* EmailSceneController.swift in Sources */,
+				D8211D282DAD81B400ABE166 /* EmailSceneModels.swift in Sources */,
+				D8211D292DAD81B400ABE166 /* EmailScenePresenter.swift in Sources */,
+				D8211D2A2DAD81B400ABE166 /* EmailSceneFactory.swift in Sources */,
+				D8211D2B2DAD81B400ABE166 /* EmailSceneRouter.swift in Sources */,
 				5E099B332CB84A880056F226 /* AppDelegate.swift in Sources */,
 				5E863B382D7E375A00665603 /* Constants.swift in Sources */,
 				5EB419D82D74CE870068F01A /* AuthorizationData.swift in Sources */,
 				5EE85C6E2D6FAFE400EA10C9 /* PhotoViewController .swift in Sources */,
+				D8211D1E2DAD7F4900ABE166 /* RegistrationEmailPresenter.swift in Sources */,
 				5ECE27A72CD8EAC10079795C /* WelcomeViewController.swift in Sources */,
 				5ED23F192D3EDF9500B47A7A /* RegistrationNameViewController.swift in Sources */,
 				5E863B3B2D803BEA00665603 /* MyCustomButton.swift in Sources */,
@@ -337,6 +380,7 @@
 				5E099B352CB84A880056F226 /* SceneDelegate.swift in Sources */,
 				5ECE27A42CD8EA130079795C /* RegistrationEmailViewController.swift in Sources */,
 				5EB419DA2D74D0230068F01A /* Protocol.swift in Sources */,
+				D8211D1C2DAD7E4500ABE166 /* RegistrantionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
