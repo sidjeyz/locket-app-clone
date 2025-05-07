@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -20,14 +20,15 @@
             <objects>
                 <viewController storyboardIdentifier="PhotoViewController" id="Y6W-OH-hqX" customClass="PhotoViewController" customModule="Locket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JV-y4-iA6">
-                                <rect key="frame" x="0.0" y="218" width="393" height="335"/>
+                                <rect key="frame" x="0.0" y="218" width="430" height="415"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kID-CF-vGc">
-                                <rect key="frame" x="337" y="134" width="40" height="40"/>
+                                <rect key="frame" x="374" y="134" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="6e7-g2-z2B"/>
                                     <constraint firstAttribute="height" constant="40" id="b0K-xr-UCx"/>
@@ -37,7 +38,7 @@
                                 <buttonConfiguration key="configuration" style="filled" image="message"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHU-18-CKS">
-                                <rect key="frame" x="116.66666666666669" y="134" width="160" height="40"/>
+                                <rect key="frame" x="135" y="134" width="160" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Tyn-2K-gPQ"/>
                                     <constraint firstAttribute="height" constant="40" id="wlf-N3-oz1"/>
@@ -59,7 +60,7 @@
                                 <buttonConfiguration key="configuration" style="filled" image="profile"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYj-DT-AHI">
-                                <rect key="frame" x="158.66666666666666" y="597" width="76" height="76"/>
+                                <rect key="frame" x="177" y="677" width="76" height="76"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="TJp-ty-4u8"/>
@@ -72,7 +73,7 @@
                                 </buttonConfiguration>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS3-9H-gxM">
-                                <rect key="frame" x="0.0" y="735" width="393" height="117"/>
+                                <rect key="frame" x="0.0" y="815" width="430" height="117"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PF-jY-CBW">
                                         <rect key="frame" x="146" y="0.0" width="40" height="40"/>
@@ -88,13 +89,13 @@
                                         </buttonConfiguration>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="История" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkD-hb-Mrb">
-                                        <rect key="frame" x="196" y="10" width="68" height="20"/>
+                                        <rect key="frame" x="233" y="10" width="68" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjJ-RN-Tqt">
-                                        <rect key="frame" x="184.66666666666666" y="43" width="24" height="24"/>
+                                        <rect key="frame" x="203" y="43" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="4TJ-Nw-fQi"/>
                                             <constraint firstAttribute="height" constant="24" id="FbQ-9u-dHb"/>
@@ -116,7 +117,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOh-Kc-fO7" userLabel="flash" customClass="MyCustomImageButton" customModule="Locket" customModuleProvider="target">
-                                <rect key="frame" x="44" y="611" width="44" height="44"/>
+                                <rect key="frame" x="44" y="691" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IMB-0V-pFV"/>
@@ -124,7 +125,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKg-tc-tw9" userLabel="cameraRotation" customClass="MyCustomImageButton" customModule="Locket" customModuleProvider="target">
-                                <rect key="frame" x="305" y="611" width="44" height="44"/>
+                                <rect key="frame" x="342" y="691" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="NaM-GF-adi"/>
@@ -187,6 +188,9 @@
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

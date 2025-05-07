@@ -129,8 +129,8 @@ class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UIT
         
         self.auth.email = emailTextField.text ?? ""
         
-        let storyboard = UIStoryboard(name: "RegistrationNameViewController", bundle: nil)
-        if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "RegistrationNameViewController") as? RegistrationNameViewController {
+        let storyboard = UIStoryboard(name: "NameSceneController", bundle: nil)
+        if let regNameViewController = storyboard.instantiateViewController(withIdentifier: "NameSceneController") as? NameSceneController {
             navigationController?.pushViewController(regNameViewController, animated: true)
         } else {
             print("Не удалось найти RegistrationNameViewController в Storyboard")

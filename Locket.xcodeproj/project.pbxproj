@@ -27,10 +27,16 @@
 		5ED23F152D3EDEF600B47A7A /* RegPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED23F142D3EDEF500B47A7A /* RegPasswordViewController.swift */; };
 		5ED23F172D3EDF6000B47A7A /* RegPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED23F162D3EDF6000B47A7A /* RegPasswordViewController.storyboard */; };
 		5ED23F192D3EDF9500B47A7A /* RegistrationNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED23F182D3EDF9500B47A7A /* RegistrationNameViewController.swift */; };
-		5ED23F1B2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED23F1A2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard */; };
 		5EE85C6E2D6FAFE400EA10C9 /* PhotoViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE85C6D2D6FAFE400EA10C9 /* PhotoViewController .swift */; };
 		5EE85C702D6FAFFB00EA10C9 /* PhotoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE85C6F2D6FAFFB00EA10C9 /* PhotoViewController.storyboard */; };
 		CEDDF7822DB6DA9400FC31EB /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7812DB6DA8200FC31EB /* CameraView.swift */; };
+		CEDDF7A72DCA560C00FC31EB /* NameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A32DCA560C00FC31EB /* NameSceneModel.swift */; };
+		CEDDF7A82DCA560C00FC31EB /* NameScenePresentationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A42DCA560C00FC31EB /* NameScenePresentationLogic.swift */; };
+		CEDDF7A92DCA560C00FC31EB /* NameSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A12DCA560C00FC31EB /* NameSceneFactory.swift */; };
+		CEDDF7AA2DCA560C00FC31EB /* NameSceneBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A22DCA560C00FC31EB /* NameSceneBusinessLogic.swift */; };
+		CEDDF7AB2DCA560C00FC31EB /* NameSceneDisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A02DCA560C00FC31EB /* NameSceneDisplayLogic.swift */; };
+		CEDDF7AC2DCA560C00FC31EB /* NameSceneRoutingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A52DCA560C00FC31EB /* NameSceneRoutingLogic.swift */; };
+		CEDDF7B02DCA72C400FC31EB /* NameSceneController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDF7AF2DCA72C400FC31EB /* NameSceneController.storyboard */; };
 		D84043FF2CBC45E00054922A /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */; };
 		D84044002CBC45E00054922A /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */; };
 		D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */; };
@@ -66,10 +72,16 @@
 		5ED23F142D3EDEF500B47A7A /* RegPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegPasswordViewController.swift; sourceTree = "<group>"; };
 		5ED23F162D3EDF6000B47A7A /* RegPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegPasswordViewController.storyboard; sourceTree = "<group>"; };
 		5ED23F182D3EDF9500B47A7A /* RegistrationNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNameViewController.swift; sourceTree = "<group>"; };
-		5ED23F1A2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationNameViewController.storyboard; sourceTree = "<group>"; };
 		5EE85C6D2D6FAFE400EA10C9 /* PhotoViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoViewController .swift"; sourceTree = "<group>"; };
 		5EE85C6F2D6FAFFB00EA10C9 /* PhotoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoViewController.storyboard; sourceTree = "<group>"; };
 		CEDDF7812DB6DA8200FC31EB /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		CEDDF7A02DCA560C00FC31EB /* NameSceneDisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSceneDisplayLogic.swift; sourceTree = "<group>"; };
+		CEDDF7A12DCA560C00FC31EB /* NameSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSceneFactory.swift; sourceTree = "<group>"; };
+		CEDDF7A22DCA560C00FC31EB /* NameSceneBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSceneBusinessLogic.swift; sourceTree = "<group>"; };
+		CEDDF7A32DCA560C00FC31EB /* NameSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSceneModel.swift; sourceTree = "<group>"; };
+		CEDDF7A42DCA560C00FC31EB /* NameScenePresentationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameScenePresentationLogic.swift; sourceTree = "<group>"; };
+		CEDDF7A52DCA560C00FC31EB /* NameSceneRoutingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSceneRoutingLogic.swift; sourceTree = "<group>"; };
+		CEDDF7AF2DCA72C400FC31EB /* NameSceneController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameSceneController.storyboard; sourceTree = "<group>"; };
 		D84043F62CBC45DF0054922A /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		D84043F72CBC45DF0054922A /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		D84043F82CBC45DF0054922A /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -188,8 +200,8 @@
 		5ED23F122D3EDE6B00B47A7A /* RegistrationName  */ = {
 			isa = PBXGroup;
 			children = (
+				CEDDF7A62DCA560C00FC31EB /* Scene */,
 				5ED23F182D3EDF9500B47A7A /* RegistrationNameViewController.swift */,
-				5ED23F1A2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard */,
 			);
 			path = "RegistrationName ";
 			sourceTree = "<group>";
@@ -228,6 +240,20 @@
 				CEDDF7812DB6DA8200FC31EB /* CameraView.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		CEDDF7A62DCA560C00FC31EB /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CEDDF7A02DCA560C00FC31EB /* NameSceneDisplayLogic.swift */,
+				CEDDF7A12DCA560C00FC31EB /* NameSceneFactory.swift */,
+				CEDDF7AF2DCA72C400FC31EB /* NameSceneController.storyboard */,
+				CEDDF7A22DCA560C00FC31EB /* NameSceneBusinessLogic.swift */,
+				CEDDF7A32DCA560C00FC31EB /* NameSceneModel.swift */,
+				CEDDF7A42DCA560C00FC31EB /* NameScenePresentationLogic.swift */,
+				CEDDF7A52DCA560C00FC31EB /* NameSceneRoutingLogic.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		D84043F52CBC456D0054922A /* Fonts */ = {
@@ -306,7 +332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89E3E9D2CBC47590034D046 /* SF Pro Rounded Semibold.otf in Resources */,
-				5ED23F1B2D3EDFAA00B47A7A /* RegistrationNameViewController.storyboard in Resources */,
 				5E099B3F2CB84A8A0056F226 /* LaunchScreen.storyboard in Resources */,
 				D84044032CBC45E00054922A /* SF-Pro-Rounded-Light.otf in Resources */,
 				D84044072CBC45E00054922A /* SF-Pro-Rounded-Medium.otf in Resources */,
@@ -317,6 +342,7 @@
 				5E099B3A2CB84A880056F226 /* Main.storyboard in Resources */,
 				5EB419DF2D77DE160068F01A /* MainViewController.storyboard in Resources */,
 				5EE85C702D6FAFFB00EA10C9 /* PhotoViewController.storyboard in Resources */,
+				CEDDF7B02DCA72C400FC31EB /* NameSceneController.storyboard in Resources */,
 				D84044012CBC45E00054922A /* SF-Pro-Rounded-Bold.otf in Resources */,
 				D84044042CBC45E00054922A /* SF-Pro-Rounded-Regular.otf in Resources */,
 				D84044002CBC45E00054922A /* SF-Pro-Rounded-Ultralight.otf in Resources */,
@@ -342,6 +368,12 @@
 				5EB419D82D74CE870068F01A /* AuthorizationData.swift in Sources */,
 				5EE85C6E2D6FAFE400EA10C9 /* PhotoViewController .swift in Sources */,
 				5ECE27A72CD8EAC10079795C /* WelcomeViewController.swift in Sources */,
+				CEDDF7A72DCA560C00FC31EB /* NameSceneModel.swift in Sources */,
+				CEDDF7A82DCA560C00FC31EB /* NameScenePresentationLogic.swift in Sources */,
+				CEDDF7A92DCA560C00FC31EB /* NameSceneFactory.swift in Sources */,
+				CEDDF7AA2DCA560C00FC31EB /* NameSceneBusinessLogic.swift in Sources */,
+				CEDDF7AB2DCA560C00FC31EB /* NameSceneDisplayLogic.swift in Sources */,
+				CEDDF7AC2DCA560C00FC31EB /* NameSceneRoutingLogic.swift in Sources */,
 				5ED23F192D3EDF9500B47A7A /* RegistrationNameViewController.swift in Sources */,
 				5E863B3B2D803BEA00665603 /* MyCustomButton.swift in Sources */,
 				5ED23F152D3EDEF600B47A7A /* RegPasswordViewController.swift in Sources */,
@@ -498,7 +530,7 @@
 				DEVELOPMENT_TEAM = TV86ZP3KNT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Locket/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Это приложение требует доступ к камере для съемки фотографий";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Приложению требуется доступ к камере";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -509,7 +541,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rim.Locket;
+				PRODUCT_BUNDLE_IDENTIFIER = rimi.Locket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -527,7 +559,7 @@
 				DEVELOPMENT_TEAM = TV86ZP3KNT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Locket/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Это приложение требует доступ к камере для съемки фотографий";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Приложению требуется доступ к камере";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -538,7 +570,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rim.Locket;
+				PRODUCT_BUNDLE_IDENTIFIER = rimi.Locket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

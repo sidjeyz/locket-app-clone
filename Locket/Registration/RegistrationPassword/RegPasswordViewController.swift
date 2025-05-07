@@ -26,7 +26,7 @@ class RegPasswordViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    private var auth: Authorization = .init()
+    var auth: Authorization = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()

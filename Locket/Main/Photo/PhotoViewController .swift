@@ -40,6 +40,11 @@ class PhotoViewController: UIViewController{
     var currentFlashMode: AVCaptureDevice.FlashMode = .off
     var previewLayer: AVCaptureVideoPreviewLayer?
     
+    var frontCameraDeviceInput: AVCaptureDeviceInput?
+    var backCameraDeviceInput: AVCaptureDeviceInput?
+    
+    var currentCameraPosition: AVCaptureDevice.Position = .back
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,10 +52,12 @@ class PhotoViewController: UIViewController{
         flash.image.image = UIImage(named: "flash")
         
         cameraRotation.onTap = {
+            self.switchCamera()
             print("cameraRotation вкл")
         }
         
         flash.onTap = {
+            self.toggleFlash()
             print("flash вкл")
         }
         
@@ -119,46 +126,111 @@ class PhotoViewController: UIViewController{
         }
     }
     
-    
-    func setupCamera() {
-
-        captureSession = AVCaptureSession()
+    func switchCamera() {
         
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
-        let videoInput: AVCaptureDeviceInput
+        
+            guard let captureSession = captureSession else { return }
+            
+            captureSession.beginConfiguration()
+            
+
+            if let currentInput = captureSession.inputs.first as? AVCaptureDeviceInput {
+                captureSession.removeInput(currentInput)
+            }
+            
+
+            if currentCameraPosition == .back {
+                if let frontInput = frontCameraDeviceInput {
+                    if captureSession.canAddInput(frontInput) {
+                        captureSession.addInput(frontInput)
+                        currentCameraPosition = .front
+                    }
+                }
+            } else {
+                if let backInput = backCameraDeviceInput {
+                    if captureSession.canAddInput(backInput) {
+                        captureSession.addInput(backInput)
+                        currentCameraPosition = .back
+                    }
+                }
+            }
+            
+            captureSession.commitConfiguration()
+        }
+        
+    
+    
+    
+    
+    func toggleFlash() {
+
+        guard let device = AVCaptureDevice.default(for: .video) else {
+                print("Камера не доступна")
+                return
+            }
         
         do {
-            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+            try device.lockForConfiguration()
+            
+            if device.torchMode == .off {
+                try device.setTorchModeOn(level: 1.0)
+                currentFlashMode = .on
+                flash.image.image = UIImage(named: "flash")
+            } else {
+                device.torchMode = .off
+                currentFlashMode = .off
+                flash.image.image = UIImage(named: "flash")
+            }
+            
+            device.unlockForConfiguration()
         } catch {
-            return
-        }
-        
-        if (captureSession?.canAddInput(videoInput) == true) {
-            captureSession?.addInput(videoInput)
-        } else {
-            return
-        }
-        
-        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession! )
-        previewLayer?.videoGravity = .resizeAspectFill
-        previewLayer?.connection?.videoOrientation = .portrait
-        
-
-        previewLayer?.frame = cameraView.bounds
-        cameraView.layer.addSublayer(previewLayer!)
-        
-
-        DispatchQueue.global(qos: .userInitiated).async { [self] in
-            captureSession?.startRunning()
+            print("Ошибка вспышки: \(error.localizedDescription)")
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    
+    func setupCamera() {
+            captureSession = AVCaptureSession()
+            
+            let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera],
+                                                                    mediaType: .video,
+                                                                 position: .unspecified)
+            
+            for device in discoverySession.devices {
+                if device.position == .back {
+                    backCameraDeviceInput = try? AVCaptureDeviceInput(device: device)
+                    captureDevice = device
+                } else if device.position == .front {
+                    frontCameraDeviceInput = try? AVCaptureDeviceInput(device: device)
+                }
+            }
+            
+            guard let backInput = backCameraDeviceInput else { return }
+            
+            if captureSession?.canAddInput(backInput) == true {
+                captureSession?.addInput(backInput)
+                currentCameraPosition = .back
+            }
+            
+            previewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+            previewLayer?.videoGravity = .resizeAspectFill
+            previewLayer?.connection?.videoOrientation = .portrait
+            previewLayer?.frame = cameraView.bounds
+            
+            if let previewLayer = previewLayer {
+                cameraView.layer.insertSublayer(previewLayer, at: 0)
+            }
+            
+            DispatchQueue.main.async {
+                self.flash.isHidden = !(self.captureDevice?.hasFlash ?? false)
+            }
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                self?.captureSession?.startRunning()
+            }
+        }
         
-        if captureSession?.isRunning == true {
-            captureSession?.stopRunning()
+        override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            previewLayer?.frame = cameraView.bounds
         }
     }
-    
-}
