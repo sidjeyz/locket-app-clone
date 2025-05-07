@@ -7,6 +7,31 @@
 
 import Foundation
 import UIKit
+
+
+struct RegistrationEmailViewModel {
+    
+    let mainTitle: String = "Прив"
+    let emailPlaceholder: String
+    let emailText: String?
+    let termsText: NSAttributedString
+    let button: ButtonViewModel
+    
+    let onTextChange: (String) -> ()
+    
+    struct ButtonViewModel {
+        
+        let text: String
+        let color: UIColor
+        let onSelect: () -> ()
+        
+    }
+    
+    
+    
+}
+
+
 class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,9 +46,26 @@ class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UIT
     
     private var auth: Authorization = .init()
     
+    private let service: RegistrantionService = .init()
+    
+    var viewModel: RegistrationEmailViewModel? {
+        didSet {
+            render()
+        }
+    }
+    
+    private func render() {
+        guard let viewModel else { return }
+        self.continueButton.tintColor = viewModel.button.color
+        self.continueButton.setTitle(viewModel.button.text, for: .normal)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+        
         
         self.navigationItem.hidesBackButton = true
         
@@ -90,7 +132,7 @@ class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UIT
         continueButton.clipsToBounds = true
         let email = sender.text
         
-        if isValidEmail(email!) {
+        if service.validateEmail(email!) {
             
             continueButton.backgroundColor = UIColor.systemOrange
             let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
@@ -98,15 +140,13 @@ class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UIT
             continueButton.isEnabled = true
             continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
             
-        } else if isValidEmail(email!) == false{
+        } else {
             
             continueButton.backgroundColor = UIColor.secondaryLabel
             let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
             continueButton.setAttributedTitle(attributedTitle, for: .normal)
             continueButton.isEnabled = false
             continueButton.setImage(UIImage(named: "continue"), for: .normal)
-            
-        } else {
             
         }
     }
@@ -138,13 +178,6 @@ class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UIT
         
     }
     
-    func isValidEmail(_ email: String) -> Bool {
-        
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-        
-    }
     
     private func moveTermsTextView(isUpwards: Bool, keyboardHeight: CGFloat, duration: Double) {
         
