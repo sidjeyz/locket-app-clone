@@ -29,13 +29,17 @@ final class NameSceneInteractor: NameSceneBusinessLogic {
             presenter.buildState(response: .start)
             
         case .nameTextDidChange(let text):
+        #warning("А где презентер?")
             let validationResult = validateName(text)
         }
     }
+    
+    /// Валидирует имя на правильность
+    /// - Parameter text: Текст для проверки
+    /// - Returns: Да / нет
     private func validateName(_ text: String) -> Bool {
-        let nameTextField = NameSceneController().NameTextField
-        let text = nameTextField?.text
-        if text!.count >= 1 {
+        
+        if text.count >= 1 {
             return true
         } else {
             return false

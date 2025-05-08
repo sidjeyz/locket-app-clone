@@ -126,6 +126,9 @@ class PhotoViewController: UIViewController{
         }
     }
     
+    
+    
+    /// Переключает камеры (фронталка / задняя)
     func switchCamera() {
         
         

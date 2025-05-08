@@ -22,12 +22,13 @@ enum NameSceneModel {
     
     enum ViewModel {
         case display
+        case validationResult(ValidationViewModel)
+        
         struct ValidationViewModel {
             let buttonIsEnabled: Bool
             let buttonBackgroundColor: UIColor
             let buttonTextColor: UIColor
         }
-        case validationResult(ValidationViewModel)
     }
     
     enum Route {

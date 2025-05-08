@@ -21,6 +21,7 @@ final class NameSceneController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
+    #warning("нейминг не camel case")
     @IBOutlet weak var NameTextField: UITextField!
     @IBOutlet weak var buttonBottomConstraints: NSLayoutConstraint!
     
@@ -28,14 +29,16 @@ final class NameSceneController: UIViewController, UITextFieldDelegate {
     var router: NameSceneRoutingLogic?
     var interactor: NameSceneBusinessLogic?
     
+    
+    // TODO: Создать экземпляры классов для итерактора и роутера
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        continueButton.layer.cornerRadius = 10
-        continueButton.clipsToBounds = true
-        continueButton.isEnabled = false
-        continueButton.backgroundColor = .systemGray
-        continueButton.setTitleColor(.white, for: .normal)
+//        continueButton.layer.cornerRadius = 10
+//        continueButton.clipsToBounds = true
+//        continueButton.isEnabled = false
+//        continueButton.backgroundColor = .systemGray
+//        continueButton.setTitleColor(.white, for: .normal)
         
         interactor?.makeState(request: .start)
         

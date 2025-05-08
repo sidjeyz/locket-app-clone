@@ -46,7 +46,7 @@ class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UIT
     
     private var auth: Authorization = .init()
     
-    private let service: RegistrantionService = .init()
+    //private let service: RegistrantionService = .init()
     
     var viewModel: RegistrationEmailViewModel? {
         didSet {
@@ -132,23 +132,23 @@ class RegistrationEmailViewController: UIViewController, UITextViewDelegate, UIT
         continueButton.clipsToBounds = true
         let email = sender.text
         
-        if service.validateEmail(email!) {
-            
-            continueButton.backgroundColor = UIColor.systemOrange
-            let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-            continueButton.setAttributedTitle(attributedTitle, for: .normal)
-            continueButton.isEnabled = true
-            continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
-            
-        } else {
-            
-            continueButton.backgroundColor = UIColor.secondaryLabel
-            let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
-            continueButton.setAttributedTitle(attributedTitle, for: .normal)
-            continueButton.isEnabled = false
-            continueButton.setImage(UIImage(named: "continue"), for: .normal)
-            
-        }
+//        if service.validateEmail(email!) {
+//            
+//            continueButton.backgroundColor = UIColor.systemOrange
+//            let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+//            continueButton.setAttributedTitle(attributedTitle, for: .normal)
+//            continueButton.isEnabled = true
+//            continueButton.setImage(UIImage(named: "continueBlack"), for: .normal)
+//            
+//        } else {
+//            
+//            continueButton.backgroundColor = UIColor.secondaryLabel
+//            let attributedTitle = NSAttributedString(string: "Продолжить", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+//            continueButton.setAttributedTitle(attributedTitle, for: .normal)
+//            continueButton.isEnabled = false
+//            continueButton.setImage(UIImage(named: "continue"), for: .normal)
+//            
+//        }
     }
     
     

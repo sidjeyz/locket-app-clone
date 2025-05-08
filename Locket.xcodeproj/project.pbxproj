@@ -29,7 +29,6 @@
 		5ED23F192D3EDF9500B47A7A /* RegistrationNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED23F182D3EDF9500B47A7A /* RegistrationNameViewController.swift */; };
 		5EE85C6E2D6FAFE400EA10C9 /* PhotoViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE85C6D2D6FAFE400EA10C9 /* PhotoViewController .swift */; };
 		5EE85C702D6FAFFB00EA10C9 /* PhotoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EE85C6F2D6FAFFB00EA10C9 /* PhotoViewController.storyboard */; };
-		CEDDF7822DB6DA9400FC31EB /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7812DB6DA8200FC31EB /* CameraView.swift */; };
 		CEDDF7A72DCA560C00FC31EB /* NameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A32DCA560C00FC31EB /* NameSceneModel.swift */; };
 		CEDDF7A82DCA560C00FC31EB /* NameScenePresentationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A42DCA560C00FC31EB /* NameScenePresentationLogic.swift */; };
 		CEDDF7A92DCA560C00FC31EB /* NameSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDF7A12DCA560C00FC31EB /* NameSceneFactory.swift */; };
@@ -74,7 +73,6 @@
 		5ED23F182D3EDF9500B47A7A /* RegistrationNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNameViewController.swift; sourceTree = "<group>"; };
 		5EE85C6D2D6FAFE400EA10C9 /* PhotoViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoViewController .swift"; sourceTree = "<group>"; };
 		5EE85C6F2D6FAFFB00EA10C9 /* PhotoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoViewController.storyboard; sourceTree = "<group>"; };
-		CEDDF7812DB6DA8200FC31EB /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		CEDDF7A02DCA560C00FC31EB /* NameSceneDisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSceneDisplayLogic.swift; sourceTree = "<group>"; };
 		CEDDF7A12DCA560C00FC31EB /* NameSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSceneFactory.swift; sourceTree = "<group>"; };
 		CEDDF7A22DCA560C00FC31EB /* NameSceneBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSceneBusinessLogic.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 			children = (
 				5EE85C6D2D6FAFE400EA10C9 /* PhotoViewController .swift */,
 				5EE85C6F2D6FAFFB00EA10C9 /* PhotoViewController.storyboard */,
-				CEDDF7802DB6DA6400FC31EB /* Camera */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -232,14 +229,6 @@
 				5ECE27A12CD8EA120079795C /* RegistrationEmailViewController.storyboard */,
 			);
 			path = RegistrationEmail;
-			sourceTree = "<group>";
-		};
-		CEDDF7802DB6DA6400FC31EB /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				CEDDF7812DB6DA8200FC31EB /* CameraView.swift */,
-			);
-			path = Camera;
 			sourceTree = "<group>";
 		};
 		CEDDF7A62DCA560C00FC31EB /* Scene */ = {
@@ -378,7 +367,6 @@
 				5E863B3B2D803BEA00665603 /* MyCustomButton.swift in Sources */,
 				5ED23F152D3EDEF600B47A7A /* RegPasswordViewController.swift in Sources */,
 				5E099B352CB84A880056F226 /* SceneDelegate.swift in Sources */,
-				CEDDF7822DB6DA9400FC31EB /* CameraView.swift in Sources */,
 				5ECE27A42CD8EA130079795C /* RegistrationEmailViewController.swift in Sources */,
 				5EB419DA2D74D0230068F01A /* Protocol.swift in Sources */,
 			);
@@ -527,7 +515,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TV86ZP3KNT;
+				DEVELOPMENT_TEAM = PS3BVPM73X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Locket/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Приложению требуется доступ к камере";
@@ -556,7 +544,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TV86ZP3KNT;
+				DEVELOPMENT_TEAM = PS3BVPM73X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Locket/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Приложению требуется доступ к камере";
