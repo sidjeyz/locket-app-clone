@@ -20,10 +20,12 @@ final class PhotoScenePresenter: PhotoScenePresentationLogic {
     }
     
     func buildState(response: PhotoSceneModel.Response) {
-        switch response {
-        case .start:
-            self.controller?.displayContent(.display)
-        }
-        }
+        //        switch response {
+        //        case .start:
+        //           // self.controller?.displayContent(.display)
+        //        }
+        //        }
     }
+    
+}
 

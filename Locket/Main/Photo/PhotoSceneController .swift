@@ -9,7 +9,11 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class PhotoSceneController: UIViewController, AVCapturePhotoCaptureDelegate{
+protocol PhotoSceneDisplayLogic: NSObject {
+    
+}
+
+class PhotoSceneController: UIViewController, AVCapturePhotoCaptureDelegate, PhotoSceneDisplayLogic {
     
     @IBOutlet weak var messageButton: UIButton!
     

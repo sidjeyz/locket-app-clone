@@ -9,12 +9,15 @@ import Foundation
 
 
 protocol RegistrationSceneBusinessLogic: AnyObject {
-    func makeState(request: RegistrationSceneModel.Request)
+    func handle(request: RegistrationSceneModel.Request)
 }
 
 protocol RegistrationSceneDataStore {
     
 }
+
+
+
 
 final class RegistrationSceneInteractor: RegistrationSceneBusinessLogic {
     
@@ -22,11 +25,13 @@ final class RegistrationSceneInteractor: RegistrationSceneBusinessLogic {
     private var currentField: RegistrationSceneModel.FieldType = .email
     private var fieldsData: [RegistrationSceneModel.FieldType: String] = [:]
     
+    
+    
     init(presenter: RegistrationScenePresentationLogic) {
         self.presenter = presenter
     }
     
-    func makeState(request: RegistrationSceneModel.Request) {
+    func handle(request: RegistrationSceneModel.Request) {
         switch request {
         case .start:
             self.presenter.buildState(response: .start)

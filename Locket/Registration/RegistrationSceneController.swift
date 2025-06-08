@@ -35,6 +35,8 @@ final class RegistrationSceneController: UIViewController, UITextFieldDelegate {
     
     var router: RegistrationSceneRoutingLogic?
     var interactor: RegistrationSceneBusinessLogic?
+    
+#warning("Это все должно быть в интеракторе!")
     private var currentField: RegistrationSceneModel.FieldType = .email
     
     override func viewDidLoad() {
@@ -44,7 +46,7 @@ final class RegistrationSceneController: UIViewController, UITextFieldDelegate {
         self.interactor = RegistrationSceneInteractor(presenter: presenter)
         self.router = RegistrationSceneRouter(controller: self, dataStore: interactor as! RegistrationSceneDataStore)
         
-        registrationTextField.delegate = self
+      
         continueButton.clipsToBounds = true
         continueButton.layer.cornerRadius = 8
         
@@ -71,7 +73,7 @@ final class RegistrationSceneController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupViews(){
-        registrationTextField.delegate = self
+       
         registrationTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         continueButton.isEnabled = false
         continueButton.addTarget(self, action: #selector( continueButtonTapped), for: .touchUpInside)
@@ -93,11 +95,12 @@ final class RegistrationSceneController: UIViewController, UITextFieldDelegate {
         }
     }
     
+#warning("Перенести обработку в интерактор (в слой бизнес-логики)")
     @IBAction func continueButtonTapped(_ sender: Any) {
         switch currentField {
         case .email:
             if let text = registrationTextField.text, RegistrantionService().validateEmail(text) {
-                interactor?.makeState(request: .proceedToNextField)
+                interactor?.handle(request: .proceedToNextField)
                 continueButton.isEnabled = false
                 updateContinueButton()
             }
@@ -160,7 +163,7 @@ final class RegistrationSceneController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Работа с текстом для emailTextView
-    
+    #warning("Непонятное название функции")
     private func emailText() {
         // "Нажимая продолжить, вы соглашаетесь с  условиями сервиса"
         
@@ -196,6 +199,8 @@ final class RegistrationSceneController: UIViewController, UITextFieldDelegate {
     
     private func setupScrollView() {
         
+#warning("Зачем тебе это, если есть констрейнты? Или отказывайся от констрейнтов")
+        
         let labelWidth = labelScrollView.bounds.width
         let labelHeight = labelScrollView.bounds.height
         
@@ -225,19 +230,30 @@ final class RegistrationSceneController: UIViewController, UITextFieldDelegate {
         let pageWidthLabel = labelScrollView.bounds.width
         let newOffsetLabel = CGFloat(targetIndex) * pageWidthLabel
         
-        
-        UIView.animate(withDuration: 0.3) {
-            self.labelScrollView.contentOffset = CGPoint(x: newOffsetLabel, y: 0)
-        }
-        
         let pageWidthTextView = labelScrollView.bounds.width
         let newOffsetTextView = CGFloat(targetIndex) * pageWidthTextView
         
-        UIView.animate(withDuration: 0.3){
+//        UIView.animate(withDuration: 0.3) {
+//           
+//        }
+        
+        
+        let timing = UISpringTimingParameters()
+        
+        
+        let animator = UIViewPropertyAnimator(duration: 0.3, timingParameters: timing)
+        
+        animator.addAnimations {
+            self.labelScrollView.contentOffset = CGPoint(x: newOffsetLabel, y: 0)
             self.textViewScrollView.contentOffset = CGPoint(x: newOffsetTextView, y: 0)
         }
+        
+        animator.startAnimation()
+       
         self.view.layoutIfNeeded()
     }
+    
+#warning("функция ничего не делает")
     // MARK: Работа с textField
     private func updateField(type: RegistrationSceneModel.FieldType, isValid: Bool) {
         let labels: [RegistrationSceneModel.FieldType: UILabel] = [
