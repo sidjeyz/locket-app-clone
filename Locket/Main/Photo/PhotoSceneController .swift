@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class PhotoViewController: UIViewController{
+class PhotoSceneController: UIViewController, AVCapturePhotoCaptureDelegate{
     
     @IBOutlet weak var messageButton: UIButton!
     
@@ -40,13 +40,25 @@ class PhotoViewController: UIViewController{
     var currentFlashMode: AVCaptureDevice.FlashMode = .off
     var previewLayer: AVCaptureVideoPreviewLayer?
     
+    var photoOutput: AVCapturePhotoOutput?
+    var captureCompletion: ((UIImage) -> Void)?
+    
     var frontCameraDeviceInput: AVCaptureDeviceInput?
     var backCameraDeviceInput: AVCaptureDeviceInput?
     
-    var currentCameraPosition: AVCaptureDevice.Position = .back
+    var currentCameraPosition: AVCaptureDevice.Position = .back{
+        didSet {
+            updateFlashButtonState()
+        }
+    }
+    
+    var router: PhotoSceneRoutingLogic?
+    var interactor: PhotoSceneBusinessLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.interactor?.makeState(request: .start)
         
         cameraRotation.image.image = UIImage(named: "cameraRotation")
         flash.image.image = UIImage(named: "flash")
@@ -88,6 +100,11 @@ class PhotoViewController: UIViewController{
         
         checkCameraAuthorization()
         setupCamera()
+        updateFlashButtonState()
+        
+        takePhotoButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
+                
+        setupPhotoOutput()
         
     }
     
@@ -144,6 +161,7 @@ class PhotoViewController: UIViewController{
                     if captureSession.canAddInput(frontInput) {
                         captureSession.addInput(frontInput)
                         currentCameraPosition = .front
+                        turnOffFlash()
                     }
                 }
             } else {
@@ -159,8 +177,21 @@ class PhotoViewController: UIViewController{
         }
         
     
-    
-    
+    func turnOffFlash() {
+        guard let device = captureDevice, device.hasTorch else { return }
+        
+        do {
+            try device.lockForConfiguration()
+            if device.torchMode != .off {
+                device.torchMode = .off
+                currentFlashMode = .off
+                flash.image.image = UIImage(named: "flash")
+            }
+            device.unlockForConfiguration()
+        } catch {
+            print("Ошибка при выключении вспышки: \(error.localizedDescription)")
+        }
+    }
     
     func toggleFlash() {
 
@@ -188,7 +219,19 @@ class PhotoViewController: UIViewController{
         }
     }
     
-    
+    func updateFlashButtonState() {
+        let isBackCamera = currentCameraPosition == .back
+        let hasFlash = captureDevice?.hasTorch ?? false
+        
+        // Включаем/выключаем взаимодействие и меняем прозрачность
+        flash.isUserInteractionEnabled = isBackCamera && hasFlash
+        flash.alpha = (isBackCamera && hasFlash) ? 1.0 : 0.5
+        
+        // Если камера фронтальная или нет вспышки, выключаем ее
+        if !isBackCamera || !hasFlash {
+            turnOffFlash()
+        }
+    }
     func setupCamera() {
             captureSession = AVCaptureSession()
             
@@ -228,9 +271,79 @@ class PhotoViewController: UIViewController{
                 self?.captureSession?.startRunning()
             }
         }
+    private func setupPhotoOutput() {
+            photoOutput = AVCapturePhotoOutput()
+            if let photoOutput = photoOutput, let captureSession = captureSession {
+                if captureSession.canAddOutput(photoOutput) {
+                    captureSession.addOutput(photoOutput)
+                }
+            }
+        }
         
+    @objc func takePhoto() {
+        guard let photoOutput = photoOutput else { return }
+        
+        let settings = AVCapturePhotoSettings()
+        
+        // Настройка вспышки
+        if currentCameraPosition == .back && currentFlashMode == .on {
+            settings.flashMode = .on
+        } else {
+            settings.flashMode = .off
+        }
+        
+        // Делаем фото
+        photoOutput.capturePhoto(with: settings, delegate: self)
+        
+        // Анимация для эффекта съемки
+        UIView.animate(withDuration: 0.1, animations: {
+            self.cameraView.alpha = 0.5
+        }) { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.cameraView.alpha = 1.0
+            }
+        }
+    }
         override func viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
             previewLayer?.frame = cameraView.bounds
         }
     }
+
+extension PhotoSceneController {
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                        didFinishProcessingPhoto photo: AVCapturePhoto,
+                        error: Error?) {
+            if let error = error {
+                print("Ошибка при обработке фото: \(error.localizedDescription)")
+                return
+            }
+            
+            if let imageData = photo.fileDataRepresentation(),
+               let image = UIImage(data: imageData) {
+                
+                let orientedImage = fixImageOrientation(image: image)
+                
+                // Переходим на PhotoTakenViewController и передаем изображение
+                DispatchQueue.main.async {
+                    self.showPhotoTakenViewController(with: orientedImage)
+                }
+            }
+        }
+    
+    private func showPhotoTakenViewController(with image: UIImage) {
+            let storyboard = UIStoryboard(name: "PhotoTakenViewController", bundle: nil)
+            if let photoTakenVC = storyboard.instantiateViewController(withIdentifier: "PhotoTakenViewController") as? PhotoTakenViewController {
+                photoTakenVC.capturedImage = image
+                navigationController?.pushViewController(photoTakenVC, animated: true)
+            }
+        }
+        
+        private func fixImageOrientation(image: UIImage) -> UIImage {
+            if currentCameraPosition == .front {
+                return UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .leftMirrored)
+            }
+            return image
+        }
+    
+}

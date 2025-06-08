@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Photo View Controller-->
+        <!--Photo Scene Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PhotoViewController" id="Y6W-OH-hqX" customClass="PhotoViewController" customModule="Locket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoSceneController" id="Y6W-OH-hqX" customClass="PhotoSceneController" customModule="Locket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

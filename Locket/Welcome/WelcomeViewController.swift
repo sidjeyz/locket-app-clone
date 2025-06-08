@@ -24,8 +24,8 @@ class WelcomeViewController: UIViewController{
         
     }
     @IBAction func registrationButtonTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "NameSceneController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "NameSceneController") as! NameSceneController
+        let storyboard = UIStoryboard(name: "RegistrationSceneController", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrationSceneController") as! RegistrationSceneController
         navigationController?.pushViewController(vc, animated: true)
     }
     

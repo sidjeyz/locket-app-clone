@@ -30,8 +30,8 @@ class MainViewController: UIViewController{
         // Скрываем кнопку "Назад"
         self.navigationItem.hidesBackButton = true
         
-        let storyboard = UIStoryboard(name: "PhotoViewController", bundle: nil)
-        if let photoVC = storyboard.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController  {
+        let storyboard = UIStoryboard(name: "PhotoSceneController", bundle: nil)
+        if let photoVC = storyboard.instantiateViewController(withIdentifier: "PhotoSceneController") as? PhotoSceneController  {
             
             photoView.addSubview(photoVC.view)
             self.addChild(photoVC)
