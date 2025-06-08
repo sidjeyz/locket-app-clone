@@ -143,6 +143,9 @@ class PhotoSceneController: UIViewController, AVCapturePhotoCaptureDelegate{
         }
     }
     
+    
+    
+    /// Переключает камеры (фронталка / задняя)
     func switchCamera() {
         
         
